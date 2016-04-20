@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<script type="text/javascript">
+function Person(){
+}
+Person.prototype.say = function(){
+    alert("hello");
+} //定义Person类的say()方法
+function Student(){
+}
+Student.prototype = new Person(); //继承person类
+var superSsay = Student.prototype.say;
+Student.prototype.eat  = function(){
+	alert('I am eating now !');
+}
+Student.prototype.say  = function(){
+	superSsay.call(this);
+
+    alert("stu-hello");//重新父类的方法
+}
+var s  = new Student();
+s.say();
+s.eat();
+</script>
+</body>
+</html>

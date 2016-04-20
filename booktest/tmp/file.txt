@@ -1,0 +1,1242 @@
+701175870764中通速递
+
+http://ipalm.sinaapp.com/index.php
+{
+  "username": "liufu",
+  "password": "84b8e22c4255d6c4c6dbcc20942befd7",
+  "email": "695005297@qq.com",
+  "phone": "13511111111",
+  "aid": NumberInt(10),
+  "type": "null",
+  "enable": true,
+  "expire": ISODate("2015-11-14T10:53:42.0Z"),
+  "create_ts": ISODate("2015-11-13T10:53:36.0Z"),
+  "login_ts": null,
+  "first_lgn": true,
+  "update_ts": ISODate("2015-11-13T10:53:42.0Z"),
+  "is_activate": true,
+  "is_verified": true,
+  "acitvationcode": "7cb62f4974462db674d00bd16c95a09a",
+  "access_type": "admin"
+}
+
+
+
+/** agents indexes **/
+db.getCollection("agents").ensureIndex({
+  "_id": NumberInt(1)
+},[
+  
+]);
+
+/** agents indexes **/
+db.getCollection("agents").ensureIndex({
+  "aid": 1
+},{
+  "unique": true
+});
+
+/** agents indexes **/
+db.getCollection("agents").ensureIndex({
+  "parent_aid": 1
+},[
+  
+]);
+
+/** agents indexes **/
+db.getCollection("agents").ensureIndex({
+  "username": 1
+},{
+  "unique": true
+});
+
+/** agents indexes **/
+db.getCollection("agents").ensureIndex({
+  "name": 1
+},[
+  
+]);
+
+/** agents records **/
+db.getCollection("agents").insert({
+  "_id": ObjectId("52cfc3cb34a963781000002e"),
+  "addr": "北京11",
+  "aid": 99999999,
+  "create_ts": ISODate("2013-09-13T03:00:00.0Z"),
+  "email": "admin@iqinjin.com",
+  "enable": true,
+  "first_lgn": false,
+  "login_ts": ISODate("2015-11-14T01:59:54.0Z"),
+  "name": "AndroBox管理员",
+  "parent_aid": null,
+  "password": "84b8e22c4255d6c4c6dbcc20942befd7",
+  "phone": "15212876456",
+  "qq": "2222",
+  "status": 1,
+  "type": "ADMIN",
+  "username": "admin",
+  "verified": true,
+  "is_verified": true,
+  "is_activate": true,
+  "access_type": "admin",
+  "update_ts": ISODate("2015-11-14T01:59:54.0Z")
+});
+db.getCollection("agents").insert({
+  "_id": ObjectId("52cfca4434a9632c0e000052"),
+  "CHANNEL": {
+    "bonus_points": 30000,
+    "chnl_lv": 1,
+    "dev_cnt": 0,
+    "full_name": "开心盒子科技有限公司",
+    "promo_prepayment": 55,
+    "qr_code": null,
+    "short_name": "开心盒子"
+  },
+  "addr": null,
+  "aid": 4,
+  "create_ts": ISODate("2014-01-10T10:24:04.952Z"),
+  "email": "lixiaoyao@126.com",
+  "enable": true,
+  "first_lgn": false,
+  "login_ts": ISODate("2014-07-22T06:09:28.272Z"),
+  "name": "李逍遥",
+  "parent_aid": 25,
+  "password": "84b8e22c4255d6c4c6dbcc20942befd7",
+  "phone": "13154546313",
+  "qq": "",
+  "status": 1,
+  "type": "CHANNEL",
+  "update_ts": ISODate("2014-07-22T06:09:28.0Z"),
+  "username": "joybox",
+  "verified": true
+});
+db.getCollection("agents").insert({
+  "_id": ObjectId("52cfc59a34a963280a000033"),
+  "CUSTOMER": {
+    "acc_acnt": 1000,
+    "acnt": 1000,
+    "bonus_money": 9974.835,
+    "bonus_points": 15410,
+    "full_name": "青橙娱乐有限公司",
+    "short_name": "青橙娱乐"
+  },
+  "addr": "",
+  "aid": 2,
+  "create_ts": ISODate("2014-01-10T10:04:10.363Z"),
+  "email": "qingcheng@126.com",
+  "enable": true,
+  "first_lgn": true,
+  "login_ts": ISODate("2014-04-15T09:10:49.540Z"),
+  "name": "李青橙",
+  "password": "84b8e22c4255d6c4c6dbcc20942befd7",
+  "phone": "622112123",
+  "qq": "",
+  "status": 1,
+  "type": "CUSTOMER",
+  "update_ts": ISODate("2014-03-11T06:04:29.0Z"),
+  "username": "dev_demo",
+  "verified": false
+});
+db.getCollection("agents").insert({
+  "_id": ObjectId("52d4e9eb34a963280a00009b"),
+  "CUSTOMER": {
+    "acc_acnt": 1000,
+    "acnt": 1000,
+    "bonus_money": 2000,
+    "bonus_points": 100000,
+    "cstm_lv": "",
+    "frozen_acnt": 0,
+    "full_name": "百度科技有限公司",
+    "short_name": "百度",
+    "zc": "10000"
+  },
+  "addr": "北京市海淀区西直门",
+  "aid": 5,
+  "create_ts": ISODate("2014-01-14T07:40:27.571Z"),
+  "email": "111@qq.com",
+  "enable": true,
+  "first_lgn": false,
+  "login_ts": ISODate("2014-05-09T05:35:47.174Z"),
+  "name": "李彦宏",
+  "password": "84b8e22c4255d6c4c6dbcc20942befd7",
+  "phone": "13612783232",
+  "qq": "",
+  "status": 2,
+  "type": "CUSTOMER",
+  "username": "baidu",
+  "verified": true
+});
+db.getCollection("agents").insert({
+  "_id": ObjectId("53460074282bf7801f000000"),
+  "CHANNEL": {
+    "bonus_money": 0,
+    "bonus_points": 0,
+    "chnl_lv": 2,
+    "dev_cnt": 0,
+    "full_name": "sdsfds",
+    "qr_code": null,
+    "short_name": "daa"
+  },
+  "addr": null,
+  "aid": 26,
+  "create_ts": ISODate("2014-04-10T02:22:44.560Z"),
+  "email": "1001123@126.com",
+  "enable": true,
+  "first_lgn": true,
+  "login_ts": ISODate("2014-05-06T09:19:07.304Z"),
+  "name": "111",
+  "parent_aid": 4,
+  "password": "84b8e22c4255d6c4c6dbcc20942befd7",
+  "phone": "18612304311",
+  "qq": "11",
+  "type": "CHANNEL",
+  "update_ts": ISODate("2014-05-06T09:19:07.0Z"),
+  "username": "ddddd",
+  "verified": true
+});
+db.getCollection("agents").insert({
+  "_id": ObjectId("53460d84282bf7641f000000"),
+  "CHANNEL": {
+    "bonus_money": 0,
+    "bonus_points": 0,
+    "chnl_lv": 2,
+    "dev_cnt": 0,
+    "full_name": "sdasd",
+    "promo_prepayment": 22,
+    "short_name": "dad"
+  },
+  "addr": null,
+  "aid": 27,
+  "create_ts": ISODate("2014-04-10T03:18:28.461Z"),
+  "email": "100dd1123@126.com",
+  "enable": true,
+  "first_lgn": null,
+  "login_ts": null,
+  "name": "dsadd",
+  "parent_aid": 25,
+  "password": "84b8e22c4255d6c4c6dbcc20942befd7",
+  "phone": "18612304222",
+  "qq": "11",
+  "type": "CHANNEL",
+  "update_ts": ISODate("2014-04-10T03:18:28.462Z"),
+  "username": "aaaaa",
+  "verified": true
+});
+db.getCollection("agents").insert({
+  "_id": ObjectId("53461324282bf7741f000000"),
+  "aid": 28,
+  "parent_aid": 4,
+  "username": "rrrrrrrr",
+  "password": "84b8e22c4255d6c4c6dbcc20942befd7",
+  "name": "2121",
+  "email": "3242223@11.com",
+  "phone": "18611104222",
+  "addr": null,
+  "qq": "111",
+  "CHANNEL": {
+    "full_name": "aaaa",
+    "short_name": "23223",
+    "dev_cnt": 0,
+    "bonus_money": 0,
+    "bonus_points": 0,
+    "chnl_lv": 2
+  },
+  "first_lgn": null,
+  "type": "CHANNEL",
+  "verified": true,
+  "create_ts": ISODate("2014-04-10T03:42:28.542Z"),
+  "update_ts": ISODate("2014-04-10T03:42:28.543Z"),
+  "login_ts": null,
+  "enable": true
+});
+db.getCollection("agents").insert({
+  "_id": ObjectId("53461522282bf7741f000001"),
+  "CHANNEL": {
+    "bonus_money": 0,
+    "bonus_points": 0,
+    "chnl_lv": 3,
+    "dev_cnt": 0,
+    "full_name": "111",
+    "short_name": "111"
+  },
+  "addr": null,
+  "aid": 29,
+  "create_ts": ISODate("2014-04-10T03:50:58.403Z"),
+  "email": "100d222d1123@126.com",
+  "enable": true,
+  "first_lgn": null,
+  "login_ts": null,
+  "name": "111",
+  "parent_aid": 28,
+  "password": "84b8e22c4255d6c4c6dbcc20942befd7",
+  "phone": "18633334322",
+  "qq": "2222",
+  "type": "CHANNEL",
+  "update_ts": ISODate("2014-04-10T03:50:58.404Z"),
+  "username": "ssssss",
+  "verified": true
+});
+db.getCollection("agents").insert({
+  "_id": ObjectId("534615fd282bf7741f000002"),
+  "CHANNEL": {
+    "full_name": "2313",
+    "short_name": "3123",
+    "dev_cnt": 0,
+    "bonus_money": 0,
+    "bonus_points": 0,
+    "chnl_lv": 2
+  },
+  "addr": null,
+  "aid": 30,
+  "create_ts": ISODate("2014-04-10T03:54:37.611Z"),
+  "email": "100111d222d1123@126.com",
+  "enable": true,
+  "first_lgn": null,
+  "login_ts": null,
+  "name": "212112",
+  "parent_aid": 25,
+  "password": "84b8e22c4255d6c4c6dbcc20942befd7",
+  "phone": "18611101111",
+  "qq": "11",
+  "type": "CHANNEL",
+  "update_ts": ISODate("2014-04-10T03:54:37.613Z"),
+  "username": "aaaaadd",
+  "verified": true
+});
+db.getCollection("agents").insert({
+  "_id": ObjectId("5438ca48282bf70c1e000000"),
+  "aid": 53,
+  "username": "admin2",
+  "password": "84b8e22c4255d6c4c6dbcc20942befd7",
+  "name": "dffsdfds",
+  "email": "21312321@QQ.COM",
+  "phone": "18622222221",
+  "qq": "2113213",
+  "first_lgn": null,
+  "type": "ADMIN",
+  "verified": true,
+  "ADMIN": {
+    "roles": null
+  },
+  "create_ts": ISODate("2014-10-11T06:12:24.115Z"),
+  "login_ts": null,
+  "enable": true
+});
+db.getCollection("agents").insert({
+  "_id": ObjectId("53461954282bf7981f000000"),
+  "CHANNEL": {
+    "full_name": "ewwwwwww",
+    "short_name": "ewwwwww",
+    "dev_cnt": 0,
+    "bonus_money": 0,
+    "bonus_points": 0,
+    "chnl_lv": 3
+  },
+  "addr": null,
+  "aid": 31,
+  "create_ts": ISODate("2014-04-10T04:08:52.680Z"),
+  "email": "10dsdcsa2d1123@126.com",
+  "enable": true,
+  "first_lgn": null,
+  "login_ts": null,
+  "name": "121221",
+  "parent_aid": 30,
+  "password": "84b8e22c4255d6c4c6dbcc20942befd7",
+  "phone": "18613214222",
+  "qq": "",
+  "type": "CHANNEL",
+  "update_ts": ISODate("2014-04-10T04:08:52.681Z"),
+  "username": "ewwwwww",
+  "verified": true
+});
+db.getCollection("agents").insert({
+  "_id": ObjectId("53520363282bf7601e000000"),
+  "aid": 33,
+  "parent_aid": "",
+  "username": "eeee",
+  "password": "ec5e4e45748401f451ef11231c17fe14",
+  "name": "11",
+  "email": "123@qq.com",
+  "phone": "18612312312",
+  "addr": null,
+  "qq": "",
+  "CHANNEL": {
+    "full_name": "1111",
+    "short_name": "111",
+    "dev_cnt": 0,
+    "bonus_money": 0,
+    "bonus_points": 0,
+    "chnl_lv": 1
+  },
+  "first_lgn": null,
+  "type": "CHANNEL",
+  "verified": true,
+  "create_ts": ISODate("2014-04-19T05:02:27.650Z"),
+  "update_ts": ISODate("2014-04-19T05:02:27.651Z"),
+  "login_ts": null,
+  "enable": true
+});
+db.getCollection("agents").insert({
+  "_id": ObjectId("5330f7ee282bf7181800000d"),
+  "CHANNEL": {
+    "bonus_money": 0,
+    "bonus_points": 0,
+    "chnl_lv": 1,
+    "dev_cnt": 0,
+    "full_name": "啊啊啊啊",
+    "qr_code": null,
+    "short_name": "啊啊啊啊"
+  },
+  "addr": null,
+  "aid": 25,
+  "create_ts": ISODate("2014-03-25T03:28:46.890Z"),
+  "email": "100@126.com",
+  "enable": true,
+  "first_lgn": false,
+  "login_ts": ISODate("2014-06-25T08:24:23.353Z"),
+  "name": "1",
+  "parent_aid": "",
+  "password": "84b8e22c4255d6c4c6dbcc20942befd7",
+  "phone": "18612304322",
+  "qq": "1",
+  "type": "CHANNEL",
+  "update_ts": ISODate("2014-06-25T08:24:24.0Z"),
+  "username": "chnl_123",
+  "verified": true
+});
+db.getCollection("agents").insert({
+  "_id": ObjectId("534675c7282bf7741f000005"),
+  "CHANNEL": {
+    "bonus_money": 0,
+    "bonus_points": 0,
+    "chnl_lv": 4,
+    "dev_cnt": 0,
+    "full_name": "vvvvvvv",
+    "promo_prepayment": 1000,
+    "qr_code": null,
+    "short_name": "北京网吧(天龙店）"
+  },
+  "addr": null,
+  "aid": 32,
+  "create_ts": ISODate("2014-04-10T10:43:19.743Z"),
+  "email": "sdassae123@126.com",
+  "enable": true,
+  "first_lgn": true,
+  "login_ts": ISODate("2014-05-19T10:26:41.274Z"),
+  "name": "vvvv",
+  "parent_aid": 31,
+  "password": "84b8e22c4255d6c4c6dbcc20942befd7",
+  "phone": "18611534322",
+  "qq": "",
+  "type": "CHANNEL",
+  "update_ts": ISODate("2014-05-19T10:26:44.0Z"),
+  "username": "vvvvvvv",
+  "verified": true
+});
+db.getCollection("agents").insert({
+  "_id": ObjectId("5382bdda282bf77c18000000"),
+  "CUSTOMER": {
+    "acc_acnt": 1000,
+    "acnt": 1000,
+    "bonus_money": 1000,
+    "bonus_points": 10000,
+    "cstm_lv": "",
+    "frozen_acnt": 0,
+    "full_name": "123213",
+    "short_name": "213213",
+    "zc": "33231"
+  },
+  "addr": "213213",
+  "aid": 34,
+  "create_ts": ISODate("2014-05-26T04:06:50.745Z"),
+  "email": "123321@qq.com",
+  "enable": true,
+  "login_ts": null,
+  "name": "213213",
+  "password": "84b8e22c4255d6c4c6dbcc20942befd7",
+  "phone": "13212312222",
+  "qq": "",
+  "status": 0,
+  "type": "CUSTOMER",
+  "username": "admin11",
+  "verified": false
+});
+db.getCollection("agents").insert({
+  "_id": ObjectId("5382be55282bf77019000016"),
+  "CUSTOMER": {
+    "acc_acnt": 1000,
+    "acnt": 1000,
+    "bonus_money": 1000,
+    "bonus_points": 100000,
+    "cstm_lv": "",
+    "frozen_acnt": 0,
+    "full_name": "232232233",
+    "short_name": "111",
+    "zc": "31"
+  },
+  "addr": "231",
+  "aid": 35,
+  "create_ts": ISODate("2014-05-26T04:08:53.189Z"),
+  "email": "234@qq.com",
+  "enable": true,
+  "login_ts": null,
+  "name": "234",
+  "password": "84b8e22c4255d6c4c6dbcc20942befd7",
+  "phone": "13243215632",
+  "qq": "",
+  "status": 0,
+  "type": "CUSTOMER",
+  "username": "admin22",
+  "verified": false
+});
+db.getCollection("agents").insert({
+  "_id": ObjectId("53eda618282bf78805000000"),
+  "aid": 36,
+  "parent_aid": "",
+  "username": "asd",
+  "password": "e1c4ba8715e5d50873d43b96d0425351",
+  "name": "2321",
+  "email": "2323@wqewq.com",
+  "phone": "18623223432",
+  "addr": null,
+  "qq": "",
+  "CHANNEL": {
+    "full_name": "23213",
+    "short_name": "213123",
+    "dev_cnt": 0,
+    "bonus_money": 0,
+    "bonus_points": 0,
+    "chnl_lv": 1
+  },
+  "first_lgn": null,
+  "type": "CHANNEL",
+  "verified": true,
+  "create_ts": ISODate("2014-08-15T06:18:00.382Z"),
+  "update_ts": ISODate("2014-08-15T06:18:00.384Z"),
+  "login_ts": null,
+  "enable": false
+});
+db.getCollection("agents").insert({
+  "_id": ObjectId("541944b0282bf7cc2b000002"),
+  "aid": 39,
+  "parent_aid": "",
+  "username": "adminsfsdfs",
+  "password": "42dfd4939818097fc3a37cbe99534a70",
+  "name": "",
+  "email": "",
+  "phone": "",
+  "addr": null,
+  "qq": "",
+  "CHANNEL": {
+    "full_name": "fsfsfaf",
+    "short_name": "ffaffsad",
+    "dev_cnt": 0,
+    "bonus_money": 0,
+    "bonus_points": 0,
+    "chnl_lv": 1
+  },
+  "first_lgn": null,
+  "type": "CHANNEL",
+  "verified": true,
+  "create_ts": ISODate("2014-09-17T08:22:08.329Z"),
+  "update_ts": ISODate("2014-09-17T08:22:08.330Z"),
+  "login_ts": null,
+  "enable": true
+});
+db.getCollection("agents").insert({
+  "_id": ObjectId("541a4a3a282bf7ac1b000002"),
+  "aid": 45,
+  "parent_aid": "",
+  "username": "sasssssssss",
+  "password": "27b21f96c7db78400ae5511d24f32f7b",
+  "name": "aa",
+  "email": "sss@dddd.ccc",
+  "phone": "18622222222",
+  "addr": null,
+  "qq": "",
+  "CHANNEL": {
+    "full_name": "sddddddd",
+    "short_name": "s",
+    "dev_cnt": 0,
+    "bonus_money": 0,
+    "bonus_points": 0,
+    "chnl_lv": 1
+  },
+  "first_lgn": null,
+  "type": "CHANNEL",
+  "verified": true,
+  "create_ts": ISODate("2014-09-18T02:58:01.905Z"),
+  "update_ts": ISODate("2014-09-18T02:58:02.906Z"),
+  "login_ts": null,
+  "enable": true
+});
+db.getCollection("agents").insert({
+  "_id": ObjectId("541a4bca282bf7a41e000002"),
+  "aid": 49,
+  "parent_aid": "",
+  "username": "AAAAAAAA",
+  "password": "a926c5d9de6b559874e63b80cdf1d9fa",
+  "name": "11111111",
+  "email": "QWWWWWWW@QQ.COM",
+  "phone": "18611111111",
+  "addr": "",
+  "qq": "",
+  "CHANNEL": {
+    "full_name": "AAAAAAAAA",
+    "short_name": "AAAAAAAAAAAAAAAAA",
+    "dev_cnt": 0,
+    "bonus_money": 0,
+    "bonus_points": 0,
+    "chnl_lv": 1
+  },
+  "first_lgn": null,
+  "type": "CHANNEL",
+  "verified": true,
+  "create_ts": ISODate("2014-09-18T03:04:42.917Z"),
+  "update_ts": ISODate("2014-09-18T03:04:42.918Z"),
+  "login_ts": null,
+  "enable": true
+});
+db.getCollection("agents").insert({
+  "_id": ObjectId("541a4cc8282bf7280c000003"),
+  "aid": 51,
+  "parent_aid": "",
+  "username": "vvvvvv",
+  "password": "c233ce4d6287837ab1d87a6c03fd2b01",
+  "name": "vvvvvvvvvvvvvvvvv",
+  "email": "999999999@qq.ccccccc",
+  "phone": "18999999999",
+  "addr": "",
+  "qq": "",
+  "CHANNEL": {
+    "full_name": "vvvvvvvvvvvvvv",
+    "short_name": "vvvvvvvvvvvvvvvvvvvvvv",
+    "dev_cnt": 0,
+    "bonus_money": 0,
+    "bonus_points": 0,
+    "chnl_lv": 1
+  },
+  "first_lgn": null,
+  "type": "CHANNEL",
+  "verified": true,
+  "create_ts": ISODate("2014-09-18T03:08:56.246Z"),
+  "update_ts": ISODate("2014-09-18T03:08:56.248Z"),
+  "login_ts": null,
+  "enable": true
+});
+db.getCollection("agents").insert({
+  "_id": ObjectId("541a4d44282bf7a41e000003"),
+  "aid": 52,
+  "parent_aid": "",
+  "username": "ffffffffff",
+  "password": "51de714d3de8c95870cc63868bae4f00",
+  "name": "ffffffffffffffffff",
+  "email": "",
+  "phone": "",
+  "addr": "",
+  "qq": "",
+  "CHANNEL": {
+    "full_name": "ffffff",
+    "short_name": "ffffffffffffffffffffffff",
+    "dev_cnt": 0,
+    "bonus_money": 0,
+    "bonus_points": 0,
+    "chnl_lv": 1
+  },
+  "first_lgn": null,
+  "type": "CHANNEL",
+  "verified": true,
+  "create_ts": ISODate("2014-09-18T03:11:00.594Z"),
+  "update_ts": ISODate("2014-09-18T03:11:00.596Z"),
+  "login_ts": null,
+  "enable": true
+});
+db.getCollection("agents").insert({
+  "_id": ObjectId("54755484282bf7c81100001d"),
+  "ADMIN": {
+    "roles": null
+  },
+  "aid": 54,
+  "create_ts": ISODate("2014-11-26T04:18:12.914Z"),
+  "email": "111@11.com",
+  "enable": true,
+  "first_lgn": true,
+  "login_ts": ISODate("2014-11-26T04:18:22.897Z"),
+  "name": "11111",
+  "password": "84b8e22c4255d6c4c6dbcc20942befd7",
+  "phone": "18611111112",
+  "qq": "11111",
+  "type": "ADMIN",
+  "username": "messi",
+  "verified": true
+});
+db.getCollection("agents").insert({
+  "_id": ObjectId("5551ce35c1672d203a000000"),
+  "aid": 252,
+  "parent_aid": "51",
+  "username": "wf_qxwy_oiea",
+  "password": "a140248cd142c72ae89b279a8082ced2",
+  "name": "吴小姐",
+  "email": "",
+  "phone": "18522232276",
+  "addr": null,
+  "qq": "",
+  "CHANNEL": {
+    "full_name": "清心网友（潍坊诸城市横二路）",
+    "short_name": "清心网友（潍坊诸城市横二路）",
+    "dev_cnt": "13",
+    "bonus_money": 0,
+    "bonus_points": "0",
+    "chnl_lv": 3
+  },
+  "first_lgn": null,
+  "type": "CHANNEL",
+  "verified": true,
+  "create_ts": ISODate("2015-03-08T06:00:00.0Z"),
+  "update_ts": ISODate("2015-05-08T06:00:00.0Z"),
+  "login_ts": null,
+  "enable": true,
+  "is_bob": true
+});
+db.getCollection("agents").insert({
+  "_id": ObjectId("5551cf87c1672dc83b000000"),
+  "aid": 251,
+  "parent_aid": "51",
+  "username": "wf_lr_oiea",
+  "password": "a140248cd142c72ae89b279a8082ced2",
+  "name": "钱先生",
+  "email": "",
+  "phone": "13653398657",
+  "addr": null,
+  "qq": "",
+  "CHANNEL": {
+    "full_name": "猎人（潍坊诸城市密州路）",
+    "short_name": "猎人（潍坊诸城市密州路）",
+    "dev_cnt": "13",
+    "bonus_money": 0,
+    "bonus_points": "0",
+    "chnl_lv": 3
+  },
+  "first_lgn": null,
+  "type": "CHANNEL",
+  "verified": true,
+  "create_ts": ISODate("2015-03-08T06:00:00.0Z"),
+  "update_ts": ISODate("2015-05-08T06:00:00.0Z"),
+  "login_ts": null,
+  "enable": true,
+  "is_bob": true
+});
+db.getCollection("agents").insert({
+  "_id": ObjectId("5555753bc1672dac3b000003"),
+  "AGENT": {
+    "cash_account": "",
+    "cash_cnt": 0,
+    "cash_type": "",
+    "city": "北京 东城区 ",
+    "extract_cnt": 0,
+    "imei": "86009755305432",
+    "level": 0,
+    "name": "彭程",
+    "prev_level": 0,
+    "qr_code": null,
+    "type": "personal"
+  },
+  "addr": "融科",
+  "agent_type": "partner",
+  "aid": 145,
+  "create_ts": ISODate("2015-05-15T04:25:31.935Z"),
+  "email": "724641466@qq.com",
+  "enable": true,
+  "first_lgn": false,
+  "invite_code": "0OGNHU",
+  "login_ts": ISODate("2015-10-09T05:17:56.232Z"),
+  "name": "彭程",
+  "parent_aid": "",
+  "password": "c1ce10b7835f42652fc8fcc6ae0a70ce",
+  "phone": "18618447101",
+  "qq": 724641466,
+  "status": 1,
+  "type": "AGENT",
+  "username": "peng0cheng",
+  "verified": true
+});
+db.getCollection("agents").insert({
+  "_id": ObjectId("55559e08c1672de439000002"),
+  "AGENT": {
+    "cash_account": "",
+    "cash_cnt": 0,
+    "cash_type": "",
+    "city": "北京 东城区 ",
+    "extract_cnt": 0,
+    "imei": "86009755305432",
+    "level": 0,
+    "name": "彭程2",
+    "prev_level": 0,
+    "qr_code": null,
+    "type": "personal"
+  },
+  "addr": "融科",
+  "agent_type": "channel",
+  "aid": 146,
+  "create_ts": ISODate("2015-05-15T04:25:31.935Z"),
+  "email": "724641466@qq.com",
+  "enable": true,
+  "first_lgn": true,
+  "invite_code": "0OGNHU",
+  "login_ts": ISODate("2015-06-18T08:42:46.473Z"),
+  "name": "彭程2",
+  "parent_aid": "",
+  "password": "c1ce10b7835f42652fc8fcc6ae0a70ce",
+  "phone": "18618447101",
+  "qq": 724641466,
+  "status": 1,
+  "type": "SALESMAN",
+  "username": "peng00cheng",
+  "verified": true
+});
+db.getCollection("agents").insert({
+  "_id": ObjectId("555aa043c1672d7414000000"),
+  "AGENT": {
+    "type": "personal",
+    "name": "彭程3",
+    "level": 0,
+    "prev_level": 0,
+    "qr_code": null,
+    "imei": "",
+    "cash_cnt": 0,
+    "extract_cnt": 0,
+    "cash_type": "",
+    "cash_account": "",
+    "city": "北京 东城区 ",
+    "bind_ts": ISODate("2015-05-19T02:30:27.424Z"),
+    "bind_bonus": 30,
+    "is_get_bonus": false,
+    "sman_id": ObjectId("55559e08c1672de439000002")
+  },
+  "addr": "东城区",
+  "agent_type": "channel",
+  "aid": 147,
+  "create_ts": ISODate("2015-05-19T02:30:27.417Z"),
+  "email": "ew@dwd.com",
+  "enable": true,
+  "first_lgn": true,
+  "invite_code": "YTY6LX",
+  "login_ts": ISODate("2015-05-19T02:30:27.445Z"),
+  "name": "彭程3",
+  "parent_aid": 145,
+  "password": "c1ce10b7835f42652fc8fcc6ae0a70ce",
+  "phone": "13333333333",
+  "qq": 724123131,
+  "status": 1,
+  "type": "AGENT",
+  "username": "peng000cheng",
+  "verified": true
+});
+db.getCollection("agents").insert({
+  "_id": ObjectId("555ab162c1672d7414000001"),
+  "AGENT": {
+    "type": "personal",
+    "name": "彭 程 5",
+    "level": 0,
+    "prev_level": 0,
+    "qr_code": null,
+    "imei": "",
+    "cash_cnt": 0,
+    "extract_cnt": 0,
+    "cash_type": "",
+    "cash_account": "",
+    "city": "北京 东城区 ",
+    "bind_ts": ISODate("2015-05-19T03:43:30.598Z"),
+    "bind_bonus": 30,
+    "is_get_bonus": false
+  },
+  "addr": "我",
+  "agent_type": "worker",
+  "aid": 148,
+  "create_ts": ISODate("2015-05-19T03:43:30.591Z"),
+  "email": "432@324.com",
+  "enable": true,
+  "first_lgn": false,
+  "invite_code": "9SEQFP",
+  "login_ts": ISODate("2015-06-17T03:46:54.301Z"),
+  "name": "彭 程 5",
+  "parent_aid": 145,
+  "password": "c1ce10b7835f42652fc8fcc6ae0a70ce",
+  "phone": "13244444444",
+  "qq": 2147483647,
+  "status": 2,
+  "type": "AGENT",
+  "username": "peng0000cheng",
+  "verified": true
+});
+db.getCollection("agents").insert({
+  "_id": ObjectId("5562cc53c1672dd816000000"),
+  "CUSTOMER": {
+    "acc_acnt": 0,
+    "acnt": 0,
+    "bonus_money": 0,
+    "bonus_points": 0,
+    "cstm_lv": "",
+    "frozen_acnt": 0,
+    "full_name": "123456",
+    "id_card": ObjectId("55811e79c1672d4821000008"),
+    "inhand_idcard": ObjectId("55811e7bc1672da81d000009"),
+    "short_name": "22222",
+    "type": "personal"
+  },
+  "aid": 149,
+  "create_ts": ISODate("2015-05-25T07:16:35.896Z"),
+  "email": "peng0cheng@163.com",
+  "enable": true,
+  "first_lgn": true,
+  "is_detail": true,
+  "login_ts": ISODate("2015-06-18T08:42:59.470Z"),
+  "name": "33333",
+  "password": "c1ce10b7835f42652fc8fcc6ae0a70ce",
+  "phone": "55555",
+  "status": 1,
+  "type": "CUSTOMER",
+  "update_ts": ISODate("2015-05-27T06:44:32.0Z"),
+  "username": "pengcheng",
+  "v_code": "012d3pa14161XIBK7VB6R5xRSSPwGF3R",
+  "v_code_ts": ISODate("2015-05-27T06:44:32.0Z"),
+  "verified": true
+});
+db.getCollection("agents").insert({
+  "_id": ObjectId("5564269cc1672dac11000001"),
+  "AGENT": {
+    "type": "personal",
+    "name": "彭2",
+    "level": 0,
+    "prev_level": 0,
+    "qr_code": null,
+    "imei": "",
+    "cash_cnt": 0,
+    "extract_cnt": 0,
+    "cash_type": "",
+    "cash_account": "",
+    "city": "北京 东城区 ",
+    "bind_ts": ISODate("2015-05-26T07:54:04.766Z"),
+    "bind_bonus": 0,
+    "is_get_bonus": true
+  },
+  "addr": "2222",
+  "agent_type": "channel",
+  "aid": 154,
+  "create_ts": ISODate("2015-05-26T07:54:04.760Z"),
+  "email": "3213@daw.com",
+  "enable": true,
+  "first_lgn": true,
+  "invite_code": "O4X30H",
+  "login_ts": ISODate("2015-05-26T07:54:04.773Z"),
+  "name": "彭2",
+  "parent_aid": 145,
+  "password": "c1ce10b7835f42652fc8fcc6ae0a70ce",
+  "phone": "13244444445",
+  "qq": 312321,
+  "status": 1,
+  "type": "AGENT",
+  "username": "peng00000cheng",
+  "verified": true
+});
+db.getCollection("agents").insert({
+  "_id": ObjectId("556d70a6c1672d0c19000000"),
+  "AGENT": {
+    "type": "personal",
+    "name": "彭程22",
+    "level": 0,
+    "prev_level": 0,
+    "qr_code": null,
+    "imei": "",
+    "cash_cnt": 0,
+    "extract_cnt": 0,
+    "cash_type": "",
+    "cash_account": "",
+    "city": "北京 东城区 ",
+    "bind_bonus": 0,
+    "is_get_bonus": true,
+    "sman_id": ObjectId("55559e08c1672de439000002")
+  },
+  "addr": "人",
+  "agent_type": "channel",
+  "aid": 155,
+  "create_ts": ISODate("2015-06-02T09:00:22.460Z"),
+  "email": "2qed@dwad.com",
+  "enable": true,
+  "invite_code": "ZZDIF8",
+  "name": "彭程22",
+  "parent_aid": "",
+  "password": "c1ce10b7835f42652fc8fcc6ae0a70ce",
+  "phone": "13333333365",
+  "qq": 31232131,
+  "status": 0,
+  "type": "AGENT",
+  "username": "peng00chengg",
+  "verified": true
+});
+db.getCollection("agents").insert({
+  "_id": ObjectId("556d710dc1672d0c19000001"),
+  "AGENT": {
+    "type": "organ",
+    "name": "彭程222",
+    "level": 0,
+    "prev_level": 0,
+    "qr_code": null,
+    "imei": "",
+    "cash_cnt": 0,
+    "extract_cnt": 0,
+    "cash_type": "",
+    "cash_account": "",
+    "city": "北京 东城区 ",
+    "sman_id": ObjectId("55559e08c1672de439000002"),
+    "bind_bonus": 0,
+    "is_get_bonus": true
+  },
+  "username": "peng00chenggg",
+  "password": "c1ce10b7835f42652fc8fcc6ae0a70ce",
+  "aid": 156,
+  "name": "彭程222",
+  "phone": "13342433333",
+  "email": "dw@dwad.com",
+  "addr": "人",
+  "qq": 342424,
+  "create_ts": ISODate("2015-06-02T09:02:05.795Z"),
+  "verified": true,
+  "enable": true,
+  "type": "AGENT",
+  "status": 0,
+  "invite_code": "7M8J95",
+  "parent_aid": "",
+  "agent_type": "channel"
+});
+db.getCollection("agents").insert({
+  "_id": ObjectId("556fb6b2c1672d0c1900000d"),
+  "AGENT": {
+    "type": "personal",
+    "name": "w w",
+    "level": 0,
+    "prev_level": 0,
+    "qr_code": null,
+    "imei": "",
+    "cash_cnt": 0,
+    "extract_cnt": 0,
+    "cash_type": "",
+    "cash_account": "",
+    "city": "北京 东城区 ",
+    "sman_id": ObjectId("55559e08c1672de439000002"),
+    "bind_bonus": 0,
+    "is_get_bonus": true
+  },
+  "addr": "wdw",
+  "agent_type": "channel",
+  "aid": 157,
+  "create_ts": ISODate("2015-06-04T02:23:46.301Z"),
+  "email": "23@dawd.com",
+  "enable": true,
+  "first_lgn": false,
+  "invite_code": "6UHZN6",
+  "login_ts": ISODate("2015-06-17T03:54:26.494Z"),
+  "name": "w w",
+  "parent_aid": "",
+  "password": "c1ce10b7835f42652fc8fcc6ae0a70ce",
+  "phone": "13324231232",
+  "qq": 0,
+  "status": 0,
+  "type": "AGENT",
+  "username": "pengchenggg",
+  "verified": true
+});
+db.getCollection("agents").insert({
+  "_id": ObjectId("55811ecbc1672d281400000e"),
+  "CUSTOMER": {
+    "acc_acnt": 0,
+    "acnt": 0,
+    "bonus_money": 0,
+    "bonus_points": 0,
+    "business_license": ObjectId("55811ed7c1672dcc0500000e"),
+    "cstm_lv": "",
+    "frozen_acnt": 0,
+    "full_name": "我我我",
+    "short_name": "我我",
+    "type": "company"
+  },
+  "aid": 158,
+  "create_ts": ISODate("2015-06-17T07:16:27.526Z"),
+  "email": "dwadQ@daw.com",
+  "enable": true,
+  "first_lgn": false,
+  "is_detail": true,
+  "login_ts": ISODate("2015-06-17T07:17:06.653Z"),
+  "name": "我",
+  "password": "c1ce10b7835f42652fc8fcc6ae0a70ce",
+  "phone": "13833332333",
+  "status": 0,
+  "type": "CUSTOMER",
+  "username": "pengcheng1",
+  "verified": false
+});
+db.getCollection("agents").insert({
+  "_id": ObjectId("559107d3c1672df41f000004"),
+  "MERCHANT": {
+    "show_name": "123",
+    "business_license": ObjectId("559107c9c1672df41f000001"),
+    "id_card": ObjectId("559107cbc1672d7021000001"),
+    "inhand_idcard": ObjectId("559107cdc1672df823000002"),
+    "bonus_money": 0,
+    "bonus_points": 0
+  },
+  "addr": "北京东城区地址1",
+  "aid": 159,
+  "create_ts": ISODate("2015-06-29T08:54:43.800Z"),
+  "email": "dwad@dwa.com",
+  "enable": true,
+  "first_lgn": true,
+  "location": {
+    "lat": 39.938574012986,
+    "lng": 116.42188470126
+  },
+  "login_ts": ISODate("2015-06-30T02:01:30.893Z"),
+  "name": "彭程",
+  "password": "c1ce10b7835f42652fc8fcc6ae0a70ce",
+  "phone": "13333302022",
+  "status": 0,
+  "type": "MERCHANT",
+  "username": "buyer_01"
+});
+db.getCollection("agents").insert({
+  "_id": ObjectId("55ebc18ec1672dd41e000000"),
+  "CHANNEL": {
+    "bonus_money": 0,
+    "bonus_points": 0,
+    "chnl_lv": 1,
+    "dev_cnt": 0,
+    "full_name": "pc",
+    "qr_code": null,
+    "short_name": "pc",
+    "show_name": "pc"
+  },
+  "addr": null,
+  "aid": 160,
+  "create_ts": ISODate("2015-05-06T04:31:10.347Z"),
+  "email": "",
+  "enable": true,
+  "first_lgn": false,
+  "login_ts": ISODate("2015-10-12T06:44:56.681Z"),
+  "name": "",
+  "parent_aid": "",
+  "password": "84b8e22c4255d6c4c6dbcc20942befd7",
+  "phone": "",
+  "qq": "",
+  "type": "CHANNEL",
+  "update_ts": ISODate("2015-10-12T06:44:57.0Z"),
+  "username": "fkue0tkgg",
+  "verified": true,
+  "wx_id": 111
+});
+db.getCollection("agents").insert({
+  "_id": ObjectId("55ebdb35c1672d7816000000"),
+  "CHANNEL": {
+    "full_name": "pc",
+    "short_name": "pc",
+    "show_name": "pc",
+    "dev_cnt": 0,
+    "bonus_money": 0,
+    "bonus_points": 0,
+    "chnl_lv": 1
+  },
+  "addr": null,
+  "aid": 161,
+  "create_ts": ISODate("2015-09-06T06:20:37.465Z"),
+  "email": "",
+  "enable": true,
+  "first_lgn": null,
+  "login_ts": null,
+  "name": "",
+  "parent_aid": "",
+  "password": "84b8e22c4255d6c4c6dbcc20942befd7",
+  "phone": "",
+  "qq": "",
+  "type": "CHANNEL",
+  "update_ts": ISODate("2015-09-08T04:10:22.0Z"),
+  "username": "fkue00tkgg",
+  "verified": true,
+  "wx_id": null
+});
+db.getCollection("agents").insert({
+  "_id": ObjectId("55f13fffd0d4fb4b518b4567"),
+  "username": "123456",
+  "password": "84b8e22c4255d6c4c6dbcc20942befd7",
+  "MERCHANT": {
+    "show_name": "望京SOHO",
+    "business_license": ObjectId("55e180bdff9eaa2b7a8b45a6"),
+    "id_card": ObjectId("55e180c2ff9eaa4a298b4581"),
+    "id_card_reverse": ObjectId("55e180c6ff9eaa487a8b4576"),
+    "inhand_idcard": ObjectId("55e180cbff9eaafd1b8b457f"),
+    "qr_code": ObjectId("55e180d0ff9eaa517a8b4576"),
+    "cashpwd": "84b8e22c4255d6c4c6dbcc20942befd7",
+    "bonus_money": 0,
+    "bonus_points": 3272
+  },
+  "name": "如花",
+  "phone": "15655555555",
+  "email": "1067288034@qq.com",
+  "addr": "北京昌平区回龙观史各庄永旺超市",
+  "location": {
+    "lat": 40.082429866218,
+    "lng": 116.33864404988
+  },
+  "aid": 1001,
+  "type": "MERCHANT",
+  "status": 1,
+  "create_ts": ISODate("2015-08-29T09:52:15.362Z"),
+  "login_ts": ISODate("2015-08-29T09:52:59.128Z"),
+  "enable": true,
+  "first_lgn": true,
+  "wx_id": "oOfjCjoZWh_VPistOe1TNz6HFJH0",
+  "update_ts": ISODate("2015-09-10T09:12:20.0Z")
+});
+db.getCollection("agents").insert({
+  "_id": ObjectId("5645823d370fdaa01000002d"),
+  "username": "liufu007",
+  "email": "121313131@163.com",
+  "password": "84b8e22c4255d6c4c6dbcc20942befd7",
+  "is_detail": false,
+  "aid": NumberInt(9),
+  "type": "CUSTOMER",
+  "verified": false,
+  "status": NumberInt(0),
+  "create_ts": ISODate("2015-11-13T06:25:01.374Z"),
+  "login_ts": ISODate("2015-11-13T10:22:42.811Z"),
+  "enable": true,
+  "CUSTOMER": {
+    "cstm_lv": "",
+    "acnt": NumberInt(0),
+    "frozen_acnt": NumberInt(0),
+    "acc_acnt": NumberInt(0),
+    "bonus_money": 0,
+    "bonus_points": NumberInt(0)
+  },
+  "first_lgn": true
+});
+db.getCollection("agents").insert({
+  "_id": ObjectId("5645c130370fda6c0d000030"),
+  "username": "liufu",
+  "password": "84b8e22c4255d6c4c6dbcc20942befd7",
+  "email": "695005297@qq.com",
+  "phone": "13511111111",
+  "aid": NumberInt(10),
+  "type": "超级管理员",
+  "enable": true,
+  "expire": ISODate("2015-11-14T10:53:42.0Z"),
+  "create_ts": ISODate("2015-11-13T10:53:36.0Z"),
+  "login_ts": ISODate("2015-11-14T02:26:42.0Z"),
+  "first_lgn": true,
+  "update_ts": ISODate("2015-11-14T02:26:42.0Z"),
+  "is_activate": true,
+  "is_verified": true,
+  "acitvationcode": "7cb62f4974462db674d00bd16c95a09a",
+  "access_type": "admin",
+  "admin_privilege_id": ObjectId("5645c316370fda1813000031")
+});
+http://192.168.1.226/svn/xiniu/server/xn-june
+http://192.168.1.226/svn/xiniu/server/zhangxin

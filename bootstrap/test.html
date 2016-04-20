@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>bootstrapTest</title>
+
+<!-- 新 Bootstrap 核心 CSS 文件 -->
+<link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+
+<!-- 可选的Bootstrap主题文件（一般不用引入） -->
+<link rel="stylesheet" href="./bootstrap/css/bootstrap-theme.min.css">
+
+<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+<script src="./bootstrap/js/jquery-2.0.3.min.js"></script>
+
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="./bootstrap/js/bootstrap.min.js"></script>
+
+<!-- HTML5 Shim 和 Respond.js 用于让 IE8 支持 HTML5元素和媒体查询 -->
+      <!-- 注意： 如果通过 file://  引入 Respond.js 文件，则该文件无法起效果 -->
+      <!--[if lt IE 9]>
+         <script src="./bootstrap/js/html5shiv.js"></script>
+         <script src="./bootstrap/js/respond.min.js"></script>
+      <![endif]-->
+</head>
+<body class="table-responsive">
+<p>标签式的导航菜单</p>
+<ul class="nav nav-tabs">
+   <li class="active"><a href="#">Home</a></li>
+   <li><a href="#">SVN</a></li>
+   <li><a href="#">iOS</a></li>
+   <li><a href="#">VB.Net</a></li>
+   <li><a href="#">Java</a></li>
+   <li><a href="#">PHP</a></li>
+</ul>
+
+<nav class="navbar navbar-default" role="navigation">
+   <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" 
+         data-target="#example-navbar-collapse">
+         <span class="sr-only">切换导航</span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">W3Cschool</a>
+   </div>
+   <div class="collapse navbar-collapse" id="example-navbar-collapse">
+      <ul class="nav navbar-nav">
+         <li class="active"><a href="#">iOS</a></li>
+         <li><a href="#">SVN</a></li>
+         <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+               Java <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+               <li><a href="#">jmeter</a></li>
+               <li><a href="#">EJB</a></li>
+               <li><a href="#">Jasper Report</a></li>
+               <li class="divider"></li>
+               <li><a href="#">分离的链接</a></li>
+               <li class="divider"></li>
+               <li><a href="#">另一个分离的链接</a></li>
+            </ul>
+         </li>
+      </ul>
+   </div>
+</nav>
+<div class="container">
+<div id="myCarousel" class="carousel slide">
+   <!-- 轮播（Carousel）指标 -->
+   <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" 
+         class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+   </ol>   
+   <!-- 轮播（Carousel）项目 -->
+   <div class="carousel-inner">
+      <div class="item active col-sm-12">
+         <img src="./images/Chrysanthemum.jpg" alt="First slide">
+      </div>
+      <div class="item col-sm-12">
+         <img src="./images/Desert.jpg" alt="Second slide">
+      </div>
+      <div class="item col-sm-12">
+         <img src="./images/Hydrangeas.jpg" alt="Third slide">
+      </div>
+   </div>
+   <!-- 轮播（Carousel）导航 -->
+   <a class="carousel-control left" href="#myCarousel" 
+      data-slide="prev">&lsaquo;</a>
+   <a class="carousel-control right" href="#myCarousel" 
+      data-slide="next">&rsaquo;</a>
+   <!-- 控制按钮 -->
+   <div style="text-align:center;">
+      <input type="button" class="btn start-slide" value="Start">
+      <input type="button" class="btn pause-slide" value="Pause">
+      <input type="button" class="btn prev-slide" value="Previous Slide">
+      <input type="button" class="btn next-slide" value="Next Slide">
+      <input type="button" class="btn slide-one" value="Slide 1">
+      <input type="button" class="btn slide-two" value="Slide 2">            
+      <input type="button" class="btn slide-three" value="Slide 3">
+   </div>
+</div> 
+<script>
+   $(function(){
+      // 初始化轮播
+      $(".start-slide").click(function(){
+         $("#myCarousel").carousel('cycle');
+      });
+      // 停止轮播
+      $(".pause-slide").click(function(){
+         $("#myCarousel").carousel('pause');
+      });
+      // 循环轮播到上一个项目
+      $(".prev-slide").click(function(){
+         $("#myCarousel").carousel('prev');
+      });
+      // 循环轮播到下一个项目
+      $(".next-slide").click(function(){
+         $("#myCarousel").carousel('next');
+      });
+      // 循环轮播到某个特定的帧 
+      $(".slide-one").click(function(){
+         $("#myCarousel").carousel(0);
+      });
+      $(".slide-two").click(function(){
+         $("#myCarousel").carousel(1);
+      });
+      $(".slide-three").click(function(){
+         $("#myCarousel").carousel(2);
+      });
+   });
+</script>
+	<table id="example" class="table table-bordered table-striped table-hover">
+        <thead>
+            <tr class='info'>
+                <th>Name</th>
+                <th>Position</th>
+                <th>Office</th>
+                <th>Age</th>
+                <th>Start date</th>
+                <th>Salary</th>
+            </tr>
+        </thead>
+ 
+        <tfoot>
+            <tr class='sr-only'>
+                <th>Name</th>
+                <th>Position</th>
+                <th>Office</th>
+                <th>Age</th>
+                <th>Start date</th>
+                <th>Salary</th>
+            </tr>
+        </tfoot>
+ 
+        <tbody>
+            <tr >
+                <td>Tiger Nixon</td>
+                <td>System Architect</td>
+                <td>Edinburgh</td>
+                <td>61</td>
+                <td>2011/04/25</td>
+                <td class='success'>$320,800</td>
+            </tr>
+            <tr>
+                <td>Garrett Winters</td>
+                <td>Accountant</td>
+                <td>Tokyo</td>
+                <td>63</td>
+                <td>2011/07/25</td>
+                <td class='success'>$170,750</td>
+            </tr>
+            <tr>
+                <td>Ashton Cox</td>
+                <td>Junior Technical Author</td>
+                <td>San Francisco</td>
+                <td>66</td>
+                <td>2009/01/12</td>
+                <td class='info'>$86,000</td>
+            </tr>
+            <tr>
+                <td>Cedric Kelly</td>
+                <td>Senior Javascript Developer</td>
+                <td>Edinburgh</td>
+                <td>22</td>
+                <td>2012/03/29</td>
+                <td class='info'>$433,060</td>
+            </tr>
+            <tr>
+                <td>Airi Satou</td>
+                <td>Accountant</td>
+                <td>Tokyo</td>
+                <td>33</td>
+                <td>2008/11/28</td>
+                <td class='info'>$162,700</td>
+            </tr>
+            <tr>
+                <td>Brielle Williamson</td>
+                <td>Integration Specialist</td>
+                <td>New York</td>
+                <td>61</td>
+                <td>2012/12/02</td>
+                <td class='warning'>$372,000</td>
+            </tr>
+            <tr>
+                <td>Herrod Chandler</td>
+                <td>Sales Assistant</td>
+                <td>San Francisco</td>
+                <td>59</td>
+                <td>2012/08/06</td>
+                <td class='warning'>$137,500</td>
+            </tr>
+            <tr>
+                <td>Rhona Davidson</td>
+                <td>Integration Specialist</td>
+                <td>Tokyo</td>
+                <td>55</td>
+                <td>2010/10/14</td>
+                <td class='warning'>$327,900</td>
+            </tr>
+            <tr>
+                <td>Colleen Hurst</td>
+                <td>Javascript Developer</td>
+                <td>San Francisco</td>
+                <td>39</td>
+                <td>2009/09/15</td>
+                <td class='danger'>$205,500</td>
+            </tr>
+            <tr>
+                <td>Sonya Frost</td>
+                <td>Software Engineer</td>
+                <td>Edinburgh</td>
+                <td>23</td>
+                <td>2008/12/13</td>
+                <td class='danger'>$103,600</td>
+            </tr>
+            <tr>
+                <td>Jena Gaines</td>
+                <td>Office Manager</td>
+                <td>London</td>
+                <td>30</td>
+                <td>2008/12/19</td>
+                <td class='danger'>$90,560</td>
+            </tr>
+        </tbody>
+    </table>
+ 	<div class='row'>
+		<div class="col-sm-5  col-md-offset-3">
+		     <form class='form-horizontal' role="form">
+		    	<div class ='form-group col-sm-10'>
+		    		<label class='control-label no-padding-right col-sm-3' for="email">电子邮件</label>	
+		    		<div class='input-group'>
+		    			<input type="email" id="email" class="form-control" placeholder="请您输入电子邮箱">
+		    		</div>	
+		    	</div>
+                <div class ='form-group col-sm-12'>
+                    <label class='control-label no-padding-right col-sm-3 input-lg' for="mydate">时间日期</label> 
+                    <div class='input-group'>
+                        <input type="date" id="mydate" class="form-control input-lg mytest" placeholder="请您输入日期">
+                    </div>  
+                </div>
+		    	<div class="space-4"></div>
+		    	<div class ='form-group col-sm-8'>
+			    	<div class= 'input-group'>
+			    		<div class='input-group-addon'>¥</div>
+			    		<input type='text' class="form-control" placeholder="输入你的金额" />
+			    		<div class="input-group-addon">元</div>
+			    	</div>
+		    	</div>
+		    </form>
+	    </div>
+    <div class='dropdown'> 
+    <button type="button" class="btn dropdown-toggle" id="dropdownMenu1" 
+      data-toggle="dropdown">   
+      <span class="caret"></span> 主题
+   </button>
+        <ul class="dropdown-menu col-sm-6"  role="menu" aria-labelledby="dropdownMenu1">
+            <li><h1>标题一</h1></li>
+            <li><h2>标题二</h2></li>
+            <li><h2>标题三</h3></li>
+            <li><h4>标题四</h4></li>
+        </ul>
+    </div>
+</div>
+ <HR />
+
+  <div class="jumbotron">
+    <h1>我的第一个 Bootstrap 页面</h1>
+    <p>重置窗口大小，查看响应式效果！</p> 
+  </div>
+  <div class="row">
+    <div class="col-sm-4">
+      <h3>Column 1</h3>
+      <p>学的不仅是技术，更是梦想！</p>
+      <p>再牛逼的梦想,也抵不住你傻逼似的坚持！</p>
+    </div>
+    <div class="col-sm-4">
+      <h3>Column 2</h3>
+      <p>学的不仅是技术，更是梦想！</p>
+      <p>再牛逼的梦想,也抵不住你傻逼似的坚持！</p>
+    </div>
+    <div class="col-sm-4">
+      <h3>Column 3</h3> 
+      <p>学的不仅是技术，更是梦想！</p>
+      <p>再牛逼的梦想,也抵不住你傻逼似的坚持！</p>
+    </div>
+  </div>
+  <button class='btn btn-info'>info</button>
+  <button class='btn btn-primary'>primary</button>
+  <button class='btn btn-success'>success</button>
+  <button class='btn btn-danger'><span class=" glyphicon glyphicon-tree-conifer"></span> danger</button>
+  <button class='btn btn-default'>default</button>
+  <button class='btn btn-warning' style="font-size: 60px"><span class= 'glyphicon glyphicon-off'></span>  warning</button>
+  <button class='btn btn-link'>link</button>
+  <button class='btn btn-info btn-lg'><span class="glyphicon glyphicon-user"></span> large</button>
+  <button class='btn btn-info btn-xs'>ExtraSmall</button>
+  <button class='btn btn-info btn-sm'>small</button>
+  <div class="space-4"></div>
+  <img src="./images/Chrysanthemum.jpg" class="img-thumbnail" width="120px" />
+  <img src="./images/Desert.jpg" class="img-circle" width="120px"/>
+  <img src="./images/Hydrangeas.jpg" class="img-rounded"  width="120px"/>
+
+    <div class="row visible-on">
+      <div class="col-xs-6 col-sm-3 visible-xs" style="background-color: #dedef8;
+         box-shadow: inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
+         <span class="hidden-xs">特别小型</span>
+         <span class="">在特别小型设备上可见</span>
+      </div>
+      <div class="col-xs-6 col-sm-3 visible-sm" style="background-color: #dedef8;
+         box-shadow: inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
+         <span class="hidden-sm">小型</span>
+         <span class="">在小型设备上可见</span>
+      </div>
+      <div class="clearfix visible-xs"></div>
+      <div class="col-xs-6 col-sm-3 visible-md" style="background-color: #dedef8;
+         box-shadow: inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
+         <span class="hidden-md">中型</span>
+         <span class="">在中型设备上可见</span>
+      </div>
+      <div class="col-xs-6 col-sm-3 visible-lg" style="background-color: #dedef8;
+         box-shadow: inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
+         <span class="hidden-lg">大型</span>
+         <span class="">在大型设备上可见</span>
+      </div>
+    </div>
+    <ul class="pagination pagination-lg">
+        <li><a href="#">&laquo;</a></li>
+        <li><a href="#">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#">5</a></li>
+        <li><a href="#">&raquo;</a></li>
+    </ul>
+    <hr />
+    <span class="label label-default">默认标签</span>
+    <span class="label label-primary">主要标签</span>
+    <span class="label label-success">成功标签</span>
+    <span class="label label-info">信息标签</span>
+    <span class="label label-warning">警告标签</span>
+    <span class="label label-danger">危险标签</span>
+    <li role="presentation" class="divider"></li>
+    <div class="progress">
+   <div class="progress-bar progress-bar-success" role="progressbar" 
+      aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" 
+      style="width: 40%;">
+      <span class="sr-only">40% 完成</span>
+   </div>
+   <div class="progress-bar progress-bar-info" role="progressbar" 
+      aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"  
+      style="width: 30%;">
+      <span class="sr-only">30% 完成（信息）</span>
+   </div>
+   <div class="progress-bar progress-bar-warning" role="progressbar" 
+      aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"  
+      style="width: 20%;">
+      <span class="sr-only">20% 完成（警告）</span>
+   </div>
+</div>
+
+<hr />
+<ul class="media-list">
+   <li class="media">
+      <a class="pull-left" href="#">
+         <img class="media-object img-thumbnail" src="./images/Hydrangeas.jpg" width="120px"
+         alt="通用的占位符图像"/>
+      </a>
+      <div class="media-body">
+         <h4 class="media-heading">媒体标题</h4>
+         <p>这是一些示例文本。这是一些示例文本。 
+            这是一些示例文本。这是一些示例文本。
+            这是一些示例文本。这是一些示例文本。
+            这是一些示例文本。这是一些示例文本。
+            这是一些示例文本。这是一些示例文本。</p>
+         <!-- 嵌套的媒体对象 -->
+         <div class="media">
+            <a class="pull-left" href="#">
+               <img class="media-object img-thumbnail" src="./images/Hydrangeas.jpg" width="120px"
+               alt="通用的占位符图像">
+            </a>
+            <div class="media-body">
+               <h4 class="media-heading">嵌套的媒体标题</h4>
+               这是一些示例文本。这是一些示例文本。
+               这是一些示例文本。这是一些示例文本。
+               这是一些示例文本。这是一些示例文本。
+               这是一些示例文本。这是一些示例文本。
+               这是一些示例文本。这是一些示例文本。
+               <!-- 嵌套的媒体对象 -->
+               <div class="media">
+                  <a class="pull-left" href="#">
+                     <img class="media-object img-thumbnail" src="./images/Hydrangeas.jpg" width="120px" 
+                     alt="通用的占位符图像">
+                  </a>
+                  <div class="media-body">
+                     <h4 class="media-heading">嵌套的媒体标题</h4>
+                     这是一些示例文本。这是一些示例文本。
+                     这是一些示例文本。这是一些示例文本。
+                     这是一些示例文本。这是一些示例文本。
+                     这是一些示例文本。这是一些示例文本。
+                     这是一些示例文本。这是一些示例文本。
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!-- 嵌套的媒体对象 -->
+         <div class="media">
+            <a class="pull-left" href="#">
+               <img class="media-object img-thumbnail" src="./images/Hydrangeas.jpg" width="120px" 
+               alt="通用的占位符图像">
+            </a>
+            <div class="media-body">
+               <h4 class="media-heading">嵌套的媒体标题</h4>
+               这是一些示例文本。这是一些示例文本。
+               这是一些示例文本。这是一些示例文本。
+               这是一些示例文本。这是一些示例文本。
+               这是一些示例文本。这是一些示例文本。
+               这是一些示例文本。这是一些示例文本。
+            </div>
+         </div>
+      </div>
+   </li>
+   <li class="media">
+      <a class="pull-right" href="#">
+         <img class="media-object img-thumbnail" src="./images/Hydrangeas.jpg" width="120px" 
+         alt="通用的占位符图像">
+      </a>
+      <div class="media-body">
+         <h4 class="media-heading">媒体标题</h4>
+         这是一些示例文本。这是一些示例文本。
+         这是一些示例文本。这是一些示例文本。
+         这是一些示例文本。这是一些示例文本。
+         这是一些示例文本。这是一些示例文本。
+         这是一些示例文本。这是一些示例文本。
+      </div>
+   </li>
+</ul>
+
+<div class="panel panel-primary">
+   <div class="panel-heading">
+      <h3 class="panel-title">面板标题</h3>
+   </div>
+   <div class="panel-body">
+      这是一个基本的面板
+   </div>
+</div>
+<div class="panel panel-success">
+   <div class="panel-heading">
+      <h3 class="panel-title">面板标题</h3>
+   </div>
+   <div class="panel-body">
+      这是一个基本的面板
+   </div>
+</div>
+<div class="panel panel-info">
+   <div class="panel-heading">
+      <h3 class="panel-title">面板标题</h3>
+   </div>
+   <div class="panel-body">
+      这是一个基本的面板
+   </div>
+</div>
+<div class="panel panel-warning">
+   <div class="panel-heading">
+      <h3 class="panel-title">面板标题</h3>
+   </div>
+   <div class="panel-body">
+      这是一个基本的面板
+   </div>
+</div>
+<div class="panel panel-danger">
+   <div class="panel-heading">
+      <h3 class="panel-title">面板标题</h3>
+   </div>
+   <div class="panel-body">
+      这是一个基本的面板
+   </div>
+   <div class="panel-footer">面板脚注</div>
+</div>
+<hr/>
+<h2>创建模态框（Modal）</h2>
+<!-- 按钮触发模态框 -->
+<button class="btn btn-primary btn-lg" data-toggle="modal" 
+   data-target="#myModal">
+   开始演示模态框
+</button>
+
+<!-- 模态框（Modal） -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" 
+   aria-labelledby="myModalLabel" aria-hidden="true">
+   <div class="modal-dialog">
+      <div class="modal-content">
+         <div class="modal-header">
+            <button type="button" class="close" 
+               data-dismiss="modal" aria-hidden="true">
+                  &times;
+            </button>
+            <h4 class="modal-title" id="myModalLabel">
+               模态框（Modal）标题
+            </h4>
+         </div>
+         <div class="modal-body">
+            在这里添加一些文本
+         </div>
+         <div class="modal-footer">
+            <button type="button" class="btn btn-default" 
+               data-dismiss="modal">关闭
+            </button>
+            <button type="button" class="btn btn-primary">
+               提交更改
+            </button>
+         </div>
+      </div><!-- /.modal-content -->
+</div><!-- /.modal -->
+</div>
+<hr />
+<h4>提示工具（Tooltip）插件 - 锚</h4>
+这是一个 <a href="#" class="tooltip-test" data-toggle="tooltip" 
+   title="默认的 Tooltip">
+   默认的 Tooltip
+</a>.
+这是一个 <a href="#" class="tooltip-test" data-toggle="tooltip" 
+   data-placement="left" title="左侧的 Tooltip">
+   左侧的 Tooltip
+</a>.
+这是一个 <a href="#" data-toggle="tooltip" data-placement="top" 
+   title="顶部的 Tooltip">
+   顶部的 Tooltip
+</a>.
+这是一个 <a href="#" data-toggle="tooltip" data-placement="bottom" 
+   title="底部的 Tooltip">
+   底部的 Tooltip
+</a>.
+这是一个 <a href="#" data-toggle="tooltip" data-placement="right" 
+   title="右侧的 Tooltip">
+   右侧的 Tooltip
+</a>
+
+<br>
+
+<h4>提示工具（Tooltip）插件 - 按钮</h4>
+<button type="button" class="btn btn-default" data-toggle="tooltip" 
+   title="默认的 Tooltip">
+   默认的 Tooltip
+</button>
+<button type="button" class="btn btn-default" data-toggle="tooltip" 
+   data-placement="left" title="左侧的 Tooltip">
+   左侧的 Tooltip
+</button>
+<button type="button" class="btn btn-default" data-toggle="tooltip" 
+   data-placement="top" title="顶部的 Tooltip">
+   顶部的 Tooltip
+</button>
+<button type="button" class="btn btn-default" data-toggle="tooltip" 
+   data-placement="bottom" title="底部的 Tooltip">
+   底部的 Tooltip
+</button>
+<button type="button" class="btn btn-default" data-toggle="tooltip" 
+   data-placement="right" title="右侧的 Tooltip">
+   右侧的 Tooltip
+</button>
+<script>
+   $(function () { $("[data-toggle='tooltip']").tooltip(); });
+</script>
+
+
+</body>
+</html>

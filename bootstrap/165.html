@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>143页</title>
+
+<!-- 新 Bootstrap 核心 CSS 文件 -->
+<link rel="stylesheet" href="../boot/bootstrap/css/bootstrap.min.css">
+
+<!-- 可选的Bootstrap主题文件（一般不用引入） -->
+<link rel="stylesheet" href="./bootstrap/css/bootstrap-theme.min.css">
+
+<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+<script src="./bootstrap/js/jquery-2.0.3.min.js"></script>
+
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="./bootstrap/js/bootstrap.min.js"></script>
+
+<!-- HTML5 Shim 和 Respond.js 用于让 IE8 支持 HTML5元素和媒体查询 -->
+<!-- 注意： 如果通过 file://  引入 Respond.js 文件，则该文件无法起效果 -->
+<!--[if lt IE 9]>
+ <script src="./bootstrap/js/html5shiv.js"></script>
+ <script src="./bootstrap/js/respond.min.js"></script>
+<![endif]-->
+      </head>
+      <body>
+      	<div class="msg">
+      		<div class="msg_caption">
+      			<span class="bigger">放大</span>
+      			<span class="smaller">缩小</span>
+      		</div>
+      		<div>
+      			<p id="para">
+      				This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.
+      			</p>
+      		</div>
+      	</div>
+      </body>
+      <script>
+      	$(function(){
+      		$('span').click(function(){
+      			var thisEle = $("#para").css("font-size");
+      			var textFontSize = parseFloat(thisEle, 10);
+      			var unit = thisEle.slice(-2);
+      			var cName = $(this).attr("class");
+      			if(cName=="bigger"){
+      				textFontSize +=2;
+      			}else if(cName == "smaller"){
+      				textFontSize -=2;
+      			}
+      			$("#para").css("font-size",textFontSize+unit);
+      		});
+      	});
+      </script>
+ </html>

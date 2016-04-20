@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>220页</title>
+   <script src="./bootstrap/js/jquery-2.0.3.min.js"></script>
+   <script src="./bootstrap/js/jquery.form.min.js"></script>
+</head>
+      <body>
+         <form id="myForm" method="post" action="demo.php">
+            名字：<input type="text" name="name" /><br />
+            地址：<input type="text" name="address" /><br />
+            自我介绍：<textarea name="comment"></textarea><br />
+            <input type="submit" id="test" value="提交"/><br />
+            <div id="output1" style="display: none;"></div>
+         </form>
+      </body>
+      <script>
+         $(document).ready(function(){
+            $('#myForm').ajaxForm(function(){
+               $('#output1').html("提交成功！欢迎下次再来！").show();
+            });
+         });
+      </script>
+</html>

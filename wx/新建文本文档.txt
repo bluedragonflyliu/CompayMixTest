@@ -1,0 +1,45 @@
+
+/*include_once "./wx/WXBizMsgCrypt.php";
+
+// 假设企业号在公众平台上设置的参数如下
+$encodingAesKey = "zQbAbwUFnMOYXAqje2ut7kfnygkFoUamhj44q24ElHR";
+$token = "UqsYYDTK";
+$corpId = "wxa8d6419df2e03d86";
+
+//http://ipalm.sinaapp.com/index.php
+//获取待验证的参数  
+$sVerifyMsgSig = $_GET["msg_signature"]; 
+$sVerifyTimeStamp = $_GET["timestamp"]; 
+$sVerifyNonce = $_GET["nonce"]; 
+$sVerifyEchoStr = $_GET["echostr"];   
+//以企业号参数为参数生成解码对象  
+
+$wxcpt = new WXBizMsgCrypt($token, $encodingAesKey, $corpId);   
+//进行地址解析  
+$errCode = $wxcpt->VerifyURL($sVerifyMsgSig, $sVerifyTimeStamp, $sVerifyNonce, $sVerifyEchoStr, $sEchoStr); 
+if ($errCode == 0) {  
+//如果没有异常就返回加密的echostr的明文  
+echo $sEchoStr;  
+} else {  
+ //出现异常就返回异常编码  
+	echo $errCode;  
+} 
+*/
+
+//获得参数 signature nonce token timestamp echostr
+$nonce     = $_GET['nonce'];
+$token     = 'my_hand_ok';
+$timestamp = $_GET['timestamp'];
+$echostr   = $_GET['echostr'];
+$signature = $_GET['signature'];
+//形成数组，然后按字典序排序
+$myArray = array();
+$myArray = array($nonce, $timestamp, $token);
+sort($myArray);
+//拼接成字符串,sha1加密 ，然后与signature进行校验
+$myStr = sha1( implode( '',$myArray ) );
+if( $myStr  == $signature){
+	//第一次接入weixin api接口的时候
+	echo  $echostr;
+	exit;
+}

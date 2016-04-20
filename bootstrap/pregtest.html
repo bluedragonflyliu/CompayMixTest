@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>正则的练习</title>
+</head>
+<body>
+	<input type="text"  name="phone" id="phone_num"/>
+	<button type='button' id='btn' name='accept'>确认</button>
+	<script type="text/javascript">
+	var but = document.getElementById('btn');
+		but.addEventListener('click',function(){
+			var phone_num=document.getElementById('phone_num').value;
+			//var preg = /[1-9][0-9]*/;
+			//var preg = /^((1[34578])+\d{9})$/;
+			var preg = /^((1[34578])+\d{9})$/;
+			var static = preg.test(phone_num);
+			alert(static);
+		});
+		
+
+	</script>
+</body>
+</html>

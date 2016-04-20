@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>文本</title>
+</head>
+<style>
+ #mytext{
+ 	margin-right: 20px;
+ 	margin-top: 20px;
+ }
+</style>
+<body>
+	<form method="post" action="textarea.php">
+		<textarea name='mytext' id='mytext' rows=10 cols=70></textarea><br />
+		<input type='submit' value='提交'/>
+	</form>
+</body>
+<script type="text/javascript" src="../empty/jquery-2.0.3.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#mytext').keydown(function(event){
+	  switch(event.keyCode) {
+	  	case 32:
+	  	var content = $('#mytext').val();
+	  	$('#mytext').val(content+'&nbsp;');
+	  	break;
+	  	case 13:
+	  	var content = $('#mytext').val();
+	  	$('#mytext').val(content+'<br />');
+	  	break;
+	  }
+	});
+
+	});
+</script>
+</html>

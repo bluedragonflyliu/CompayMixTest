@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>cookie</title>
+</head>
+<script src="./bootstrap/js/jquery-2.0.3.min.js"></script>
+<script src="./jquery-cookie/jquery.cookie.js"></script>
+<body>
+	<script>
+		$(function(){
+			var COOKIE_NAME='username';
+			if($.cookie(COOKIE_NAME)){
+				$('#username').val($.cookie(COOKIE_NAME));
+			}
+			$('#check').click(function(){
+				if(this.checked){
+					$.cookie(COOKIE_NAME,$('#username').val(),{path:'/',expires:10});
+				}else{
+					$.cookie(COOKIE_NAME,null, {path:'/'});
+				}
+			});
+		});
+	</script>
+	用户名：<input type="text" name="username" id="username"/><br/>
+	<input type="checkbox" name="check" id="check"/>记住用户名
+</body>
+</html>

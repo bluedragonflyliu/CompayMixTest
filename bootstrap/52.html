@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src='./bootstrap/js/jquery-2.0.3.min.js'></script>
+</head>
+<body>
+	<div class='test'>
+		<div style="display: none;">aa</div>
+		<div style="display: none;">bb</div>
+		<div style="display: none;">cc</div>
+		<div class='test' style="display: none;">dd</div>
+	</div>
+	<div class='test' style="display: none;">ee</div>
+	<div class='test' style="display: none;">ff</div>
+</body>
+<script type="text/javascript">
+	$(document).ready(function(){
+		//选取class为 “test”的元素里面的隐藏元素
+		var $t_a = $('.test :hidden');
+		//选取隐藏并且的class为 “test”的元素
+		var $t_b = $('.test:hidden');
+		var len_a = $t_a.length;
+		var len_b = $t_b.length;
+		$t_a.each(function(){
+			console.log($(this).html());
+			document.write($(this).html());
+			document.write('<br />');
+		});
+		document.write('<hr>');
+		$t_b.each(function(){
+			console.log($(this).html());
+			document.write($(this).html());
+			document.write('<br />');
+		});
+	});
+</script>
+</html>

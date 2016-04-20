@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>bootstrapTest</title>
+
+<!-- 新 Bootstrap 核心 CSS 文件 -->
+<link rel="stylesheet" href="../boot/bootstrap/css/bootstrap.min.css">
+
+<!-- 可选的Bootstrap主题文件（一般不用引入） -->
+<link rel="stylesheet" href="./bootstrap/css/bootstrap-theme.min.css">
+
+<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+<script src="./bootstrap/js/jquery-2.0.3.min.js"></script>
+
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="./bootstrap/js/bootstrap.min.js"></script>
+
+<!-- HTML5 Shim 和 Respond.js 用于让 IE8 支持 HTML5元素和媒体查询 -->
+      <!-- 注意： 如果通过 file://  引入 Respond.js 文件，则该文件无法起效果 -->
+      <!--[if lt IE 9]>
+         <script src="./bootstrap/js/html5shiv.js"></script>
+         <script src="./bootstrap/js/respond.min.js"></script>
+      <![endif]-->
+</head>
+<body>
+	<div id="pannel">
+		<h5 class="head">什么是jQuery？</h5>
+		<div class="content">
+			jQuery是继Prototype之后又一个优秀的JavaScript库，他是一个由John Resig创建于2006年1月的开源项目。jQuery凭借简洁的语法和跨平台的兼容性，极大的简化了JavaScript开发人员遍历HTML文档、操作DOM、处理事件、执行动画和开发Ajax。它独特而又优雅的代码风格改变了JavaScript程序员的设计思路和编写程序的方式。
+		</div>
+	</div>
+</body>
+<script>
+	$(function(){
+		$("#pannel h5.head").toggle(function(){
+			$(this).next("div.content").show();
+		}function(){
+			$(this).next("div.content").hide();
+		});
+	});
+
+</script>
+</html>

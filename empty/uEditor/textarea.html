@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+	.close{
+		float:right;
+		margin-right: 10px;
+		margin-top: 10px; 
+		height: 20px;
+		width:20px;
+		border-radius: 50%;
+		background-color: white;
+		text-align: center;
+		vertical-align: middle;
+		font: bold;
+		color:red;
+		cursor:pointer;
+	}
+	.title{
+		width: 20%;
+		height: 50px;
+		float: left;
+		background-color: skyblue;
+		text-align: center;
+		margin-left: 4%;
+	}
+	.content{
+		width: 100%;
+		height: 250px;
+		float: left;
+		background-color: firebrick; 
+		text-align: center;
+		vertical-align: middle;
+		margin-left: 4%;
+	}
+	.comcon,.comtitle{
+		width: 90%;
+		float: left;
+		margin-bottom: 10px;
+	}
+	.content textarea{
+		resize: none;
+	}
+	#formfoot{
+		width: 100%;
+		float: left;
+	}
+</style>
+<body>
+	<div class="container">
+	<form action="getContent.php" method="post">
+		<div class='comtitle'>
+			<div class='title'><div class='close'>&times;</div><div class='serial'>1</div></div>	
+		</div>
+		<div class='comcon'>
+			<div class='content'><textarea cols="148" rows="15" name='input[]'>1</textarea></div>
+		</div>
+	
+	<input type='hidden' name='index' id='index' value="1" />
+	<div id='formfoot'>
+		<button type='button' id='add'>add</button>
+		<button type='submit' id='add'>提交</button>
+	</div>
+	</form>
+	</div>
+	<script src="./UEditor/third-party/jquery-1.10.2.min.js"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('#add').click(function(){
+				var comtitle = $('.comtitle:eq(0)').find('.title').eq(0).clone(true);
+				var comcon   = $('.comcon:eq(0)').find('.content').eq(0).clone(true);
+				var index = parseInt($('#index').val());
+				$('#index').val(index+1);
+				comtitle.find('.serial').html(index+1);
+				$('.comtitle:eq(0)').append(comtitle);
+				$('.content').hide();
+				comcon.show();
+				comcon.find('textarea').val(index+1);
+				$('.comcon:eq(0)').append(comcon);
+			});
+
+			$('.close').click(function(){
+				var index = $(this).parent().index();
+				if(index != 0){
+					$('.content').eq(index).remove();
+					$('.title').eq(index).remove();
+				}
+				
+			});
+			$('.title').on('click',function(){
+				var serial = $(this).index();
+				$('.content').hide();
+				$('.content').eq(serial).show();
+			});
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>bootstrapTest</title>
+
+<!-- 新 Bootstrap 核心 CSS 文件 -->
+<link rel="stylesheet" href="../boot/bootstrap/css/bootstrap.min.css">
+
+<!-- 可选的Bootstrap主题文件（一般不用引入） -->
+<link rel="stylesheet" href="./bootstrap/css/bootstrap-theme.min.css">
+
+<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+<script src="./bootstrap/js/jquery-2.0.3.min.js"></script>
+
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="./bootstrap/js/bootstrap.min.js"></script>
+
+<!-- HTML5 Shim 和 Respond.js 用于让 IE8 支持 HTML5元素和媒体查询 -->
+      <!-- 注意： 如果通过 file://  引入 Respond.js 文件，则该文件无法起效果 -->
+      <!--[if lt IE 9]>
+         <script src="./bootstrap/js/html5shiv.js"></script>
+         <script src="./bootstrap/js/respond.min.js"></script>
+      <![endif]-->
+      <style>
+			.highlight{
+				background: #FF3300;
+			}
+			.over{
+				color:red;
+			}
+			#panel1{
+				position: relative;
+				width:100px;
+				height: 100px;
+				border: 1px solid #0050D0;
+				background: #96E555;
+				cursor: pointer;
+			}
+      </style>
+</head>
+<body>
+	<div id="panel">
+		<h5 class="head">什么是jQuery？</h5>
+		<div class="content">
+			jQuery是继Prototype之后又一个优秀的JavaScript库，他是一个由John Resig创建于2006年1月的开源项目。jQuery凭借简洁的语法和跨平台的兼容性，极大的简化了JavaScript开发人员遍历HTML文档、操作DOM、处理事件、执行动画和开发Ajax。它独特而又优雅的代码风格改变了JavaScript程序员的设计思路和编写程序的方式。
+		</div>
+	</div>
+	<div id="panel1">
+		
+	</div>
+	<div id='test'>
+	<button id="btn">单击我</button>
+	</div>
+</body>
+<script>
+	$(function(){
+	/*	$("#panel h5.head").toggle(function(){
+			$(this).addClass("highlight");
+			$(this).next("div.content").toggle();
+		},function(){
+			$(this).removeClass("highlight");
+			$(this).next("div.content").toggle();
+		});*/
+
+		/*$("body").mousedown(function(e){
+			alert(e.which);
+		});*/
+
+		
+			/*$('#btn').bind('click',function(){
+				$('#test').append("<p>我的绑定函数1</p>");
+			}).bind("click",function(){
+				$('#test').append("<p>我的绑定函数2</p>");
+			}).bind("click",function(){
+				$('#test').append("<p>我的绑定函数3</p>");
+			});*/
+		
+		/*	$('#btn').bind("myclick", function(event,message1,message2){
+    			$('#test').append("<p>"+message1+message2+"</p>");
+			});
+			$('#btn').trigger("myclick",["我的自定义","事件"]);*/
+
+			$('#btn').bind("mouseover mouseout", function(){
+				$(this).toggleClass("over");
+			});
+
+/*			$("div").bind("click",function(){
+				$("body").append("<p>click事件</p>");
+			});
+			$("div").bind("click.plugin",function(){
+				$("body").append("<p>click.plugin事件</p>");
+			});
+			$("button").click(function(){ 
+				$("div").trigger("click!");//注意click后面的感叹号
+			});*/
+
+			$("#panel").bind("click.plugin",function(){
+		   	 	$("body").append("<p>click事件</p>");
+			});
+			$("#panel").bind("mouseover.plugin",function(){
+			    $("body").append("<p>mouseover事件</p>");
+			});
+			$("#panel").bind("dblclick",function(){
+			    $("body").append("<p>dblclick事件</p>");
+			});
+			$("button").click(function(){
+			    $("#panel").unbind(".plugin");
+			});
+
+
+			$("#panel1").click(function(){
+   			 	$(this).animate({left:"400px",height:"200px",opacity:"1"},3000)
+    				.animate({top:"200px",widh:"200px"},3000,function(){
+        				$(this).css("border","5px solid blue");
+    				});
+			});
+		});
+	
+		
+</script>
+</html>

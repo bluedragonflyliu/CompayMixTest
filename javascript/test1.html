@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>test1</title>
+</head>
+<body>
+	<button onclick="demo()">按钮</button><br />
+	<input type='text' name = 'myinput' id='myinput'/>
+	<button onclick="demo4()">按钮2</button>
+	<script type="text/javascript">
+		function demo(){
+			var a = 10;
+			var b = 20;
+			alert(a+b);
+		}
+		var aa = 11; //全局变量
+		function demo2(){
+			var a = 1; //局部变量
+			bb = 22;	//全局变量
+		}
+		demo2();
+		//console.log(a);
+		console.log(bb);
+
+		function demo3(){
+			try{
+				console.log(str);
+			} catch (err){
+				console.log(err);
+			}
+		}
+		//demo3();
+
+		function demo4(){
+			try{
+				var inputValue = document.getElementById('myinput').value;
+				if(inputValue==''){
+					throw '请输入值';
+				}
+
+			} catch(err){
+				alert(err);
+			}
+		}
+	</script>
+</body>
+</html>

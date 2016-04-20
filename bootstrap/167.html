@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>143页</title>
+<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+<script src="./bootstrap/js/jquery-2.0.3.min.js"></script>
+
+      </head>
+      <style>
+		.tab_box div{
+			float: left;
+			border:solid 1px skyblue;
+			width: 400px;
+			height: 300px;
+		}
+		.hide{
+			display: none;
+		}
+		.tab_menu ul li{
+			float: left;
+			list-style-type:none;
+			margin-right:5px; 
+			padding:10px;
+			border: 1px skyblue solid;
+			border-bottom-style: none;
+			border-bottom-width: 0px;
+
+			text-align: center;
+			line-height: 14px
+		}
+		ul,li {margin:0;padding:0;}
+		.tab_menu{
+			float: left;
+			padding: 0px;
+			margin:0px;
+		}
+		.content{
+			float: left;
+			width: 400px;
+			height: 400px;
+		}
+		.selected{
+			background-color: skyblue;
+		}
+		.tab_box div{
+			padding: 6px;
+		}
+		.hover{
+			background: gray;
+			color: white;
+		}
+      </style>
+      <body>
+      	<div class='content'>
+	      	<div class="tab">
+	      		<div class="tab_menu">
+	      			<ul>
+	      				<li class="selected">时事</li>
+	      				<li>体育</li>
+	      				<li>娱乐</li>
+	      			</ul>
+	      		</div>
+	      		<div class="tab_box">
+	      			<div>时事</div>
+	      			<div class="hide">体育</div>
+	      			<div class="hide">娱乐</div>
+	      		</div>
+	      	</div>
+      	</div>
+      </body>
+      <script>
+      	/*$(".tab_menu ul li").click(function(){
+      		$(this).siblings().removeClass('selected');
+      		$(this).addClass('selected');
+      		var index = $(this).index();
+      		$(".tab_box>div").addClass("hide");
+      		$(".tab_box>div").eq(index).removeClass("hide");
+      	});*/
+
+      	var $div_li = $('.tab_menu ul li');
+      	$div_li.click(function(){
+      		$(this).addClass("selected").siblings().removeClass("selected");
+      		var index = $div_li.index(this);
+      		var index2 = $(this).index();
+      		console.log(index);
+      		console.log(index2);
+      		$("div.tab_box > div").eq(index).show().siblings().hide();
+      	}).hover(function(){
+      		$(this).addClass("hover");
+      	},function(){
+      		$(this).removeClass("hover");
+      	});
+      </script>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>143页</title>
+
+<!-- 新 Bootstrap 核心 CSS 文件 -->
+<link rel="stylesheet" href="../boot/bootstrap/css/bootstrap.min.css">
+
+<!-- 可选的Bootstrap主题文件（一般不用引入） -->
+<link rel="stylesheet" href="./bootstrap/css/bootstrap-theme.min.css">
+
+<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+<script src="./bootstrap/js/jquery-2.0.3.min.js"></script>
+
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="./bootstrap/js/bootstrap.min.js"></script>
+
+<!-- HTML5 Shim 和 Respond.js 用于让 IE8 支持 HTML5元素和媒体查询 -->
+      <!-- 注意： 如果通过 file://  引入 Respond.js 文件，则该文件无法起效果 -->
+      <!--[if lt IE 9]>
+         <script src="./bootstrap/js/html5shiv.js"></script>
+         <script src="./bootstrap/js/respond.min.js"></script>
+      <![endif]-->
+      </head>
+      <style>
+		.centent{
+			width: 140px;
+			float: left;
+			margin-right:10px; 
+		}
+		.my_btn{
+			width: 140px;
+		}
+		.my_btn span{
+			background-color: skyblue;
+			float: left;
+			margin-top: 5px;
+		}
+		select{
+			overflow:hidden;
+		}
+      </style>
+      <body>
+      <div class="centent">
+      		<select multiple id="select1" style="width: 140px;height:160px;">
+      			<option value="1">选项1</option>
+      			<option value="2">选项2</option>
+      			<option value="3">选项3</option>
+      			<option value="4">选项4</option>
+      			<option value="5">选项5</option>
+      			<option value="6">选项6</option>
+      			<option value="7">选项7</option>
+      			<option value="8">选项8</option>
+      		</select>
+      		<div class='my_btn'>
+      			<span id='add'>选中添加到右边&gt;&gt;</span>
+      			<span id='add_all'>全部添加到右边&gt;&gt;</span>
+      		</div>
+      </div>
+      <div class="centent">
+      		<select multiple id="select2" style="width: 140px;height:160px;">
+      		</select>
+      		<div class='my_btn'>
+      			<span id="remove">&lt;&lt;选中删除到左边</span>
+      			<span id="remove_all">&lt;&lt;全部删除到左边</span>
+      		</div>
+      </div>
+      </body>
+      <script>
+      	$(function(){
+      		$('#add').click(function(){
+      			var $options = $('#select1 option:selected');
+      			//---------------------------//
+      			//方法一
+      			/*var $remove $options.remove();
+      			$remove.appendTo('$select2');*/
+      			//--------------------------//
+
+      			//--------------------------//
+      			//方法二
+      			$options.appendTo('#select2');
+      		});
+
+      		$('#add_all').click(function(){
+      			var $options = $('#select1 option');
+      			$options.appendTo('#select2');
+      		});
+
+      		$('#select1').dblclick(function(){
+      			/*你的问题补充1。$()有2个参数，一个是选择器，一个是作用域。要和$("xxxx,xxx")区分。通常意义下的$('xxxx')其实是默认了第二个作用域。完整说应该是$('xxxx',document)*/
+      			var $options = $("option:selected",this); 
+      			$options.appendTo("#select2");
+      		});
+      	});
+      </script>
+      </html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div class="edit" id="div_1">Dolor</div>
+	<div class="edit_area" id="div_2">Lorem ipsum dolor sit amet</div>
+	<script type='text/javascript' src='../js/jquery-1.8.3.min.js'></script>
+	<script type='text/javascript' src='../jquery.jeditable.js'></script>
+	
+	<script type='text/javascript'>
+		alert($);
+		$(document).ready(function() {
+			
+
+			$('.edit').editable('http://www.example.com/save.php', {
+	       	 		indicator : 'Saving...',
+	       		 	tooltip   : 'Click to edit...',
+		    });
+		    $('.edit_area').editable('http://www.example.com/save.php', { 
+		    	id   	  : 'elementid',
+       			name	  : 'newvalue',
+		        type      : 'textarea',
+		        cancel    : '取消',
+		        submit    : '保存',
+		        indicator : '<img src="img/indicator.gif">',
+		        tooltip   : 'Click to edit...',
+		    });
+		});
+
+	</script>
+
+</body>
+</html>

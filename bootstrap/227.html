@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>227页</title>
+	<script type="text/javascript" src="./bootstrap/js/jquery-2.0.3.min.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('body').delegate("a","click",function(){
+			alert('aa');
+			return false;
+		});
+		$('body').append('<p><a href="#">超链接B</a>');
+		$('body').append('<p><a href="#">超链接C</a>');
+
+	});
+</script>
+	<a href="#">超链接A</a>
+</body>
+</html>

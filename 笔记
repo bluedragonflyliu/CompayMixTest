@@ -1,0 +1,9 @@
+https://qyapi.weixin.qq.com/cgi-bin/gettoken?corpid=id&corpsecret=secrect
+AccessToken是企业号的全局唯一票据，调用接口时需携带AccessToken。
+
+AccessToken需要用CorpID和Secret来换取，不同的Secret会返回不同的AccessToken。正常情况下AccessToken有效期为7200秒，有效期内重复获取返回相同结果；有效期内有接口交互（包括获取AccessToken的接口），会自动续期。
+{
+   "access_token": "accesstoken000001",
+   "expires_in": 7200
+}
+https://qyapi.weixin.qq.com/cgi-bin/department/list?access_token=ACCESS_TOKEN&id=ID

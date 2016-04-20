@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+	div{
+		background: skyblue;
+		width:300px;
+		height: 100px;
+		color: white;
+		float: left;
+		margin-left: 10px;
+		text-align: center;
+		line-height: 100px;
+	}
+
+</style>
+<script src='./bootstrap/js/jquery-2.0.3.min.js'></script>
+<body>
+	<div id='zhangsan'></div>
+	<div id='lisi' title='lisititle'></div>
+</body>
+<script>
+	$(function(){
+		$("div[id][title$='title']").html('李四').css('background','black');
+	});
+</script>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+	.demo{
+		background-color: skyblue;
+		width: 200px;
+		height: 200px;
+		border-radius: 5%;
+		float: left;
+		margin-left: 5px;
+	}
+	table{
+		width: 60%;
+		height: 300px;
+		 border-collapse:collapse;
+	}
+
+    table,th,td{
+        border:1px solid green;
+    }
+    even{
+    	background-color: gray;
+    }
+    odd{
+    	background-color: pink;
+    }
+</style>
+<script type="text/javascript" src="./jquery-2.0.3.min.js"></script>
+<script type="text/javascript" src="./jquery.color.js"></script>
+<body>
+	<header>
+		<nav role='navigation'>
+			<ul>
+				<li><a href="#a">A</a></li>
+				<li><a href="#b">B</a></li>
+				<li><a href="#c">C</a></li>
+				<li><a href="#d">D</a></li>
+			</ul>
+		</nav>
+	</header>
+	<div class='demo' style="color:blue"></div>
+	<div class='demo' style="color:black"></div>
+	<div class='demo' style="color:red"></div>
+	<div class='demo' style="color:green"></div>
+	<table id='table2'>
+		<thead>
+			<th></th>
+			<th>姓名</th>
+			<th>性别</th>
+			<th>地址</th>
+		</thead>
+		<tr>
+			<td><input type="checkbox" /></td>
+			<td>张三</td>
+			<td>男</td>
+			<td>撒飒飒</td>
+		</tr>
+		<tr>
+			<td><input type="checkbox" /></td>
+			<td>李小四</td>
+			<td>女</td>
+			<td>师德师风</td>
+		</tr>
+		<tr>
+			<td><input type="checkbox" /></td>
+			<td>马大哈</td>
+			<td>男</td>
+			<td>大爱玩儿我认为</td>
+		</tr>
+		<tr>
+			<td><input type="checkbox" /></td>
+			<td>侯胖</td>
+			<td>女</td>
+			<td>额特特特特</td>
+		</tr>
+	</table>
+</body>
+<script type="text/javascript">
+	$(document).ready(function(){
+		//alert($("div").color()+"\n返回字符串，证明此插件可用");
+		//alert($("div").color("blue")+"\n返回object证明得到的是jQuery对象。");
+		$('#table2').alertBgColor().find("th").css("color","red");
+
+	});
+</script>
+</html>

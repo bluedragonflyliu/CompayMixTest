@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+
+	<!-- 可选的Bootstrap主题文件（一般不用引入） -->
+	<link rel="stylesheet" href="./bootstrap/css/bootstrap-theme.min.css">
+
+	<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+	<script src="./bootstrap/js/jquery-2.0.3.min.js"></script>
+
+	<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+	<script src="./bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="SubCategoryBox col-md-3 success col-md-offset-3">
+	<ul class="nav navbar-nav">
+		<li><a href="#" title="佳能">佳能</a><i>(30440)</i></li>
+		<li><a href="#" title="索尼">索尼</a><i>(27220)</i></li>
+		<li><a href="#" title="三星">三星</a><i>(20808)</i></li>
+		<li><a href="#" title="尼康">尼康</a><i>(17821)</i></li>
+		<li><a href="#" title="松下">松下</a><i>(12289)</i></li>
+		<li><a href="#" title="尼康">尼康</a><i>(17821)</i></li>
+		<li><a href="#" title="卡西欧">卡西欧</a><i>(8242)</i></li>
+		<li><a href="#" title="富士">富士</a><i>(14894)</i></li>
+		<li><a href="#" title="柯达">柯达</a><i>(9520)</i></li>
+		<li><a href="#" title="宾得">宾得</a><i>(2195)</i></li>
+		<li><a href="#" title="理光">理光</a><i>(4114)</i></li>
+		<li><a href="#" title="明基">明基</a><i>(1466)</i></li>
+		<li><a href="#" title="爱国者">爱国者</a><i>(3091)</i></li>
+		<li><a href="#" title="其他品牌相机">其他品牌相机</a><i>(7275)</i></li>
+	</ul>
+	<div class="showmore">
+		<a href="more.html" title="显示全部品牌"><span>显示全部品牌</span></a>
+	</div>
+</div>
+</body>
+<script type="text/javascript">
+$(function(){
+	var $category = $('ul li:gt(5):not(:last)');
+	$category.hide();
+	var $toggleBtn = $('div.showmore > a');
+	$toggleBtn.click(function(){
+		if($category.is(":visible")){
+		$category.hide();	
+		$('.showmore a span').text('显示全部品牌');
+		$('ul li').filter(":contains('佳能'),:contains('尼康'),:contains('奥林巴斯')").removeClass("promoted");		
+	} else{
+		$category.show();
+		$('.showmore a span').text("精简显示品牌");
+		$('ul li').filter(":contains('佳能'),:contains('尼康'),:contains('奥林巴斯')").addClass("promoted");
+	}
+	return false;
+	});
+	$("a").mouseover(function(e){
+		var tooltip = "<div id='tooltip'>"+this.title+"</div>";
+		$("body").append(tooltip);
+		console.log($(this));
+		$("#tooltip").css({"top":e.pageY+10+"px","left":e.pageX+10+'px'}).show("fast");
+	}).mouseout(function(e){
+		$("#tooltip").remove();
+	});
+});
+</script>
+</html>

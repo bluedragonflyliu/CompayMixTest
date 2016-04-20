@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<form action="" method='get' id='signupForm'>
+	<input type="text" name='username' id='username'/><br />
+	<input type="password" name='password'/><br />
+	<input type="submit" value='提交'  class="submit"/>
+	<input type="reset" name='重置' id='reset'/><br />
+
+</form>
+<!-- <script src="./jquery-1.8.3.min.js"></script> -->
+<!-- <script src="./jquery.validate.min.js"></script> -->
+<script src="http://static.runoob.com/assets/jquery-validation-1.14.0/lib/jquery.js"></script>
+<script src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/jquery.validate.min.js"></script>
+
+<script>
+	$().ready(function() {
+	 	$("#signupForm").validate({
+	 		rules: {
+		      username: {
+		        required: true,
+		        minlength: 2
+		     },
+		     password: {
+		        required: true,
+		        minlength: 5
+		     },
+		    },
+		    messages: {
+		      username: {
+		        required: "请输入用户名",
+		        minlength: "用户名必需由两个字母组成"
+		      },
+		      password: {
+		        required: "请输入密码",
+		        minlength: "密码长度不能小于 5 个字母"
+		      }
+		  },
+	
+	        submitHandler:function(form){
+	             $(form).ajaxSubmit({url:'test.php',data:{username:'aaaa',password:11111},type:'post'});
+	        },
+	    });
+	});
+</script>
+
+</body>
+</html>

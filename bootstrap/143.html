@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>143页</title>
+
+<!-- 新 Bootstrap 核心 CSS 文件 -->
+<link rel="stylesheet" href="../boot/bootstrap/css/bootstrap.min.css">
+
+<!-- 可选的Bootstrap主题文件（一般不用引入） -->
+<link rel="stylesheet" href="./bootstrap/css/bootstrap-theme.min.css">
+
+<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+<script src="./bootstrap/js/jquery-2.0.3.min.js"></script>
+
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="./bootstrap/js/bootstrap.min.js"></script>
+
+<!-- HTML5 Shim 和 Respond.js 用于让 IE8 支持 HTML5元素和媒体查询 -->
+      <!-- 注意： 如果通过 file://  引入 Respond.js 文件，则该文件无法起效果 -->
+      <!--[if lt IE 9]>
+         <script src="./bootstrap/js/html5shiv.js"></script>
+         <script src="./bootstrap/js/respond.min.js"></script>
+      <![endif]-->
+      </head>
+      <style>
+		.bigger,.smaller{
+			float: left;
+			background-color: skyblue;
+			margin-right: 10px;
+		}
+		.msg_caption,.panel{
+			float: left;
+			width: 100%;
+		}
+		.msg{
+			float: left;
+			width: 100%;
+		}
+      </style>
+<body>
+<form>
+	<div class="msg">
+		<div class="msg_caption">
+			<span class="bigger">放大</span>
+			<span class="smaller">缩小</span>
+		</div>
+		<div class="panel">
+			<textarea  id="comment" cols="20" rows="20" style="overflow:hidden">多行文本框高度变化。多行文本框高度变化。多行文本框高度变化。多行文本框高度变化。多行文本框高度变化。多行文本框高度变化。多行文本框高度变化。多行文本框高度变化。多行文本框高度变化。多行文本框高度变化。多行文本框高度变化。多行文本框高度变化。多行文本框高度变化。多行文本框高度变化。多行文本框高度变化。多行文本框高度变化。多行文本框高度变化。多行文本框高度变化。多行文本框高度变化。多行文本框高度变化。多行文本框高度变化。多行文本框高度变化。多行文本框高度变化。多行文本框高度变化。多行文本框高度变化。多行文本框高度变化。多行文本框高度变化。多行文本框高度变化。</textarea>
+		</div>
+	</div>
+	你爱好的运动是？
+	<input type="checkbox" id="checkedAll1"/>全选/全不选<br/>
+	<input type="checkbox" name="items" value="足球" />足球
+	<input type="checkbox" name="items" value="篮球" />篮球
+	<input type="checkbox" name="items" value="羽毛球" />羽毛球
+	<input type="checkbox" name="items" value="乒乓球" />乒乓球
+	<br />
+	
+</form>
+	<button id="CheckedAll" value="全选">全 选</button>
+	<button id="CheckedNo" value="全不选">全不选</button>
+	<button id="CheckedRev" value="反选">反 选</button>
+	<button id="send" value="提交">提 交</button>
+</body>
+<script>
+	$(function(){
+		var $comment = $('#comment');
+		$('.bigger').click(function(){
+			if($comment.height()<500){
+				//$comment.height($comment.height()+50 );
+				$comment.animate({height:"+=50"},400);
+			}
+		});
+		$('.smaller').click(function(){
+			if($comment.height()>50){
+				//$comment.height($comment.height()-50);
+				$comment.animate({height:"-=50"},400);
+			}
+		});
+
+		$("#CheckedAll").click(function(){
+			$('[name=items]:checkbox').attr('checked', true);
+		});
+
+		$("#CheckedNo").click(function(){
+			$('[name=items]:checkbox').attr('checked', false);
+		});
+
+		$("#CheckedRev").click(function(){
+			$('[name=items]:checkbox').each(function(){
+				//$(this).attr("checked", !$(this).attr("checked"));
+				this.checked = !this.checked;
+			});
+		});
+		$("#send").click(function(){
+			var str = "你选中的是：\r\n";
+			$('[name=items]:checkbox:checked').each(function(){
+				str +=$(this).val()+"\r\n";
+			});
+			alert(str);
+		});
+		$("#checkedAll1").click(function(){
+			if(this.checked){
+				$('[name=items]:checkbox').attr('checked', true);
+			} else {
+				$('[name=items]:checkbox').attr("checked", false);
+			}
+		});
+
+		//方法一
+
+		$('[name = items]:checkbox').click(function(){
+
+			var flag = true;
+			$('[name=items]:checkbox').each(function(){
+				if(!this.checked){
+					flag = false;
+				}
+			});
+			$('#checkedAll1').attr('checked',flag);
+		});
+	});
+</script>
+</html>
