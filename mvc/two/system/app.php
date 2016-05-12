@@ -29,7 +29,7 @@ final class Application {
          * @param       array   $config
          */
         public static function run($config){
-                echo SYSTEM_PATH,'<br />',ROOT_PATH,'<br/>';
+                //echo SYSTEM_PATH,'<br />',ROOT_PATH,'<br/>';
                 self::$_config = $config['system'];
                 self::init();
                 self::autoload();
@@ -89,8 +89,8 @@ final class Application {
                     'route'              =>      SYS_LIB_PATH.'/lib_route.php',
                     'mysql'              =>      SYS_LIB_PATH.'/lib_mysql.php',
                     'template'           =>      SYS_LIB_PATH.'/lib_template.php',
-                    'cache'           =>      SYS_LIB_PATH.'/lib_cache.php',
-                    'thumbnail'           =>      SYS_LIB_PATH.'/lib_thumbnail.php'
+                    'cache'              =>      SYS_LIB_PATH.'/lib_cache.php',
+                    'thumbnail'          =>      SYS_LIB_PATH.'/lib_thumbnail.php'
                 );      
         }
         /**
